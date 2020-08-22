@@ -18,27 +18,6 @@
         <div id="app-inner">
             <router-view :key="$route.fullPath" style="min-height: fit-content; width: 100%;"/>
         </div>
-        <div id="footer">
-            <em class="mb-2">Follow us on social media!</em>
-            <div id="footer-links">
-                <span class="footer-link">
-                    <icon :icon="['fab', 'twitter']" class="mr-1"/>
-                    <a href="https://twitter.com/theumdhare">@theumdhare</a>
-                </span>
-                <span class="footer-link">
-                    <icon :icon="['fab', 'instagram']" class="mr-1"/>
-                    <a href="https://www.instagram.com/theumdhare/">@theumdhare</a>
-                </span>
-                <span class="footer-link">
-                    <icon :icon="['fab', 'facebook']" class="mr-1"/>
-                    <a href="https://www.facebook.com/The-UMD-Hare-105016634398923/">The UMD Hare</a>
-                </span>
-                <span class="footer-link">
-                    <icon :icon="['fas', 'envelope']" class="mr-1"/>
-                    theumdhare@gmail.com
-                </span>
-            </div>
-        </div>
     </div>
 </template>
 

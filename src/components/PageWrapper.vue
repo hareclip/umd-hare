@@ -13,6 +13,9 @@
             <b-nav-item href="#/category/4" class="px-2 border-right">RABBITHOLE</b-nav-item>
             <b-nav-item href="#/category/7" class="px-2 border-right">BACKPAGE</b-nav-item>
             <b-nav-item href="http://ter.ps/writesatire" class="px-2">WRITE FOR US!</b-nav-item>
+            <b-nav-item href="https://twitter.com/theumdhare"><icon :icon="['fab', 'twitter']" class="mr-1"/></b-nav-item>
+            <b-nav-item href="https://www.instagram.com/theumdhare/"><icon :icon="['fab', 'instagram']" class="mr-1"/></b-nav-item>
+            <b-nav-item href="https://www.facebook.com/The-UMD-Hare-105016634398923/"><icon :icon="['fab', 'facebook']" class="mr-1"/></b-nav-item>
         </b-nav>
         <hr class="mx-2 mt-2 d-none d-md-block"/>
         <div class="pad">
