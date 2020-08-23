@@ -1,6 +1,7 @@
 <template>
     <page-wrapper :loaded="loaded">
         <h1>{{label}}</h1>
+        <h2>{{description}}</h2>
         <hr/>
         <article-list :articles="articles" class="list mx-5 mb-4"/>
     </page-wrapper>
@@ -20,7 +21,8 @@ export default {
         return {
             loaded: false,
             articles: [],
-            label: ''
+            label: '',
+            description: ''
         }
     },
     methods: {
@@ -32,6 +34,26 @@ export default {
                 this.label = labelRes.data.data.label
                 document.title = this.label + ' | The Hare'
                 this.loaded = true
+                switch (this.label) {
+                    case 'News':
+                        this.description = 'This definitely happened.';
+                        break;
+                    case 'Features':
+                        this.description = 'Glorious.';
+                        break;
+                    case 'Sports':
+                        this.description = 'Probably the least controversial thing here.';
+                        break;
+                    case 'Art':
+                        this.deescription = 'Our writers are probably on something.'
+                        break;
+                    case 'Rabbithole':
+                        this.description = '60% shit. 50% posts.';
+                        break;
+                    case 'News in Images':
+                        this.description = 'For the illiterate.';
+                        break;
+                }
             } catch (ex) {
                 console.log(ex);
             }
@@ -45,8 +67,15 @@ export default {
 
 <style scoped>
 h1 {
+    text-align: left;
     font-size: 4em;
     font-weight: bold;
+    margin-bottom: 0pt;
+    color: #c12a2a;
+}
+h2 {
+  text-align: left;
+  color: #aaaaaa;
 }
 @media screen and (max-width: 768px) {
     .list {
