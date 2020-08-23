@@ -45,7 +45,7 @@ export default {
                         this.description = 'Probably the least controversial thing here.';
                         break;
                     case 'Art':
-                        this.deescription = 'Our writers are probably on something.'
+                        this.description = 'Our writers are probably on something.'
                         break;
                     case 'Rabbithole':
                         this.description = '60% shit. 50% posts.';
