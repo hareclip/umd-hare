@@ -1,9 +1,7 @@
 <template>
+  <page-wrapper :loaded="loaded">
     <div>
-        <div class="hero py-2 mb-3">
-            <a href="#/"><div class="banner"></div></a>
-        </div>
-        <b-nav class="hello-nav d-none d-md-flex" align="center">
+        <!-- <b-nav class="hello-nav d-none d-md-flex" align="center">
             <b-nav-item href="#/category/1" class="px-2 border-right">NEWS</b-nav-item>
             <b-nav-item href="#/category/2" class="px-2 border-right">OPINION</b-nav-item>
             <b-nav-item href="#/category/5" class="px-2 border-right">SPORTS</b-nav-item>
@@ -12,7 +10,7 @@
             <b-nav-item href="#/category/4" class="px-2 border-right">RABBITHOLE</b-nav-item>
             <b-nav-item href="#/category/7" class="px-2 border-right">BACKPAGE</b-nav-item>
             <b-nav-item href="http://ter.ps/writesatire" class="px-2">WRITE FOR US!</b-nav-item>
-        </b-nav>
+        </b-nav> -->
 	<div class="search-container">
   		<form action="/search" method="get">
     			<input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
@@ -65,10 +63,13 @@
             </div>
         </loader>
     </div>
+
+    </page-wrapper>
 </template>
 
 <script>
 import Loader from '@/components/Loader'
+import PageWrapper from '@/components/PageWrapper'
 import ArticleList from '@/components/ArticleList'
 import ArticleImage from '@/components/ArticleImage'
 import ArticlePreviewText from '@/components/ArticlePreviewText'
@@ -79,6 +80,7 @@ export default {
     components: {
         Loader,
         ArticleList,
+        PageWrapper,
         'preview-image': ArticleImage,
         'preview-text': ArticlePreviewText,
         'arl': ArticleLink,
