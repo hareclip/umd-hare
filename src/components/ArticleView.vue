@@ -9,6 +9,14 @@
       <p class="info-line px-3 border-left d-none d-md-block">
         <a :href="categoryLink" class="category-link">{{article.categoryLabel}}</a>
       </p>
+      
+      <ul class="share-buttons" data-source="simplesharingbuttons.com">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="https://i.ibb.co/NKk3k8x/Facebook.png" /></a></li>
+        <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img alt="Tweet" src="https://i.ibb.co/m6vDLdf/Twitter.png" /></a></li>
+        <li><a href="http://www.reddit.com/submit?url=&title=" target="_blank" title="Submit to Reddit"><img alt="Submit to Reddit" src="https://i.ibb.co/j8sYxLN/Reddit.png" /></a></li>
+        <li><a href="mailto:?subject=&body=:%20" target="_blank" title="Send email"><img alt="Send email" src="https://i.ibb.co/C8TXbYx/Email.png" /></a></li>
+        </ul>
+      
     </div>
     <div v-if="article.headerImageFileName" class="image-container mb-4">
       <article-image :article="article" :width="imageWidth" class="mb-3 shadow-sm" />
@@ -137,6 +145,29 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons .sr-only{
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+ul.share-buttons img{
+  width: 32px;
 }
 </style>
 
