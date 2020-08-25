@@ -11,12 +11,12 @@
             <b-nav-item href="#/category/7" class="px-2 border-right">BACKPAGE</b-nav-item>
             <b-nav-item href="http://ter.ps/writesatire" class="px-2">WRITE FOR US!</b-nav-item>
         </b-nav> -->
-	<div class="search-container">
+	<!-- <div class="search-container">
   		<form action="/search" method="get">
     			<input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
    			<label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
  		</form>
-	</div>
+	</div> -->
         <hr class="mx-5 d-none d-md-block"/>
         <article-list :articles="articles" class="d-md-none mx-2 mb-4"/>
         <loader :loaded="loaded">

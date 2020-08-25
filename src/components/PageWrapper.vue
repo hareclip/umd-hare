@@ -22,6 +22,23 @@
             </b-nav>
 
         </b-navbar>
+
+        <b-navbar class="secondary-nav d-none d-md-flex" align="left">
+            <b-nav-text class="">More:</b-nav-text>
+            <b-nav-item href="#/category/2" class="px-1 ">Advertising</b-nav-item>
+            <b-nav-item href="#/category/5" class="px-1 ">Contact</b-nav-item>
+            <b-nav-item href="#/category/6" class="px-1 ">Donate</b-nav-item>
+            <b-nav-item href="#/category/4" class="px-1 ">Comedy on Campus</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Our Publishing Schedule</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Podcast</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Jobs</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Merchandise</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Submissions</b-nav-item>
+
+            </b-nav>
+
+        </b-navbar>
+
         <hr class="mx-2 mt-2 d-none d-md-block"/>
         <div class="pad">
             <loader :loaded="loaded">
@@ -60,6 +77,10 @@ export default {
   background: #c12a2a;
   list-style: none;
 }
+.secondary-nav {
+  background: white;
+  list-style: none;
+}
 .pad {
     padding: 1rem 5% 3rem 5%;
 }
@@ -68,6 +89,17 @@ export default {
     font-size: 24px;
     font-weight: bold;
     color: white;
+}
+.secondary-nav .nav-link {
+    font-family: "Verdana";
+    font-size: 12px;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+.secondary-nav .navbar-text {
+  font-family: "Verdana";
+  font-size: 15px;
+  padding-left: 3rem;
 }
 .button {
 	display: inline-block;
