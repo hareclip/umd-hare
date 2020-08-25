@@ -12,8 +12,8 @@
             <b-nav class="orient-right">
               <b-nav-item href="https://twitter.com/theumdhare"><icon :icon="['fab', 'twitter']" class="mr-1"/></b-nav-item>
               <b-nav-item href="https://www.instagram.com/theumdhare/"><icon :icon="['fab', 'instagram']" class="mr-1"/></b-nav-item>
-              <b-nav-item href="https://www.facebook.com/The-UMD-Hare-105016634398923/"><icon :icon="['fab', 'facebook']" class="mr-1"/></b-nav-item>
-              <b-nav class="search-container mr-4">
+              <b-nav-item href="https://www.facebook.com/TheUMDHare/"><icon :icon="['fab', 'facebook']" class="mr-2"/></b-nav-item>
+              <b-nav class="search-container">
                 <form action="/search" method="get">
                   <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
                   <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
@@ -94,17 +94,26 @@ export default {
     font-family: "Verdana";
     font-size: 12px;
     font-weight: bold;
-    color: #aaaaaa;
+    color: #888888;
 }
 .secondary-nav .navbar-text {
   font-family: "Verdana";
+  color: black;
   font-size: 15px;
   padding-left: 3rem;
+}
+.orient-right {
+  position: fixed;
+  top: 5px;
+  right: 0;
+  /* margin: 0;
+  border: 0;
+  padding: 0; */
 }
 .button {
 	display: inline-block;
 	margin: 4px 2px;
-	background-color: #f00;
+	background-color: #c12a2a;
 	font-size: 14px;
 	padding-left: 32px;
 	padding-right: 32px;
@@ -132,9 +141,11 @@ export default {
 .search-container {
 	position: relative;
 	display: inline-block;
-	margin: 4px 2px;
-	height: 50px;
-	width: 50px;
+  /* top: -5px; */
+  border-left: 1px solid #888888;
+	/* margin: 4px 2px; */
+	height: 65px;
+	width: 62px;
 	vertical-align: bottom;
 }
 
@@ -149,10 +160,13 @@ export default {
 
 .searchbutton {
 	position: absolute;
-	font-size: 22px;
+  /* top: 5px; */
+	font-size: 30px;
 	width: 100%;
+  height: 100%;
 	margin: 0;
 	padding: 0;
+  padding-top: 2px;
 }
 
 .search:focus + .searchbutton {
@@ -194,11 +208,4 @@ export default {
   padding: 0 0 0 16px;
 }
 
-.orient-right {
-  position: fixed;
-  right: 0;
-  margin: 0;
-  border: 0;
-  padding: 0;
-}
 </style>
