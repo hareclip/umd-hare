@@ -12,8 +12,8 @@
             <b-nav class="orient-right">
               <b-nav-item href="https://twitter.com/theumdhare"><icon :icon="['fab', 'twitter']" class="mr-1"/></b-nav-item>
               <b-nav-item href="https://www.instagram.com/theumdhare/"><icon :icon="['fab', 'instagram']" class="mr-1"/></b-nav-item>
-              <b-nav-item href="https://www.facebook.com/The-UMD-Hare-105016634398923/"><icon :icon="['fab', 'facebook']" class="mr-1"/></b-nav-item>
-              <b-nav class="search-container mr-4">
+              <b-nav-item href="https://www.facebook.com/TheUMDHare/"><icon :icon="['fab', 'facebook']" class="mr-2"/></b-nav-item>
+              <b-nav class="search-container">
                 <form action="/search" method="get">
                   <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
                   <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
@@ -22,6 +22,23 @@
             </b-nav>
 
         </b-navbar>
+
+        <b-navbar class="secondary-nav d-none d-md-flex" align="left">
+            <b-nav-text class="">More:</b-nav-text>
+            <b-nav-item href="#/category/2" class="px-1 ">Advertising</b-nav-item>
+            <b-nav-item href="#/category/5" class="px-1 ">Contact</b-nav-item>
+            <b-nav-item href="#/category/6" class="px-1 ">Donate</b-nav-item>
+            <b-nav-item href="#/category/4" class="px-1 ">Comedy on Campus</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Our Publishing Schedule</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Podcast</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Jobs</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Merchandise</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">Submissions</b-nav-item>
+
+            </b-nav>
+
+        </b-navbar>
+
         <hr class="mx-2 mt-2 d-none d-md-block"/>
         <div class="pad">
             <loader :loaded="loaded">
@@ -60,6 +77,10 @@ export default {
   background: #c12a2a;
   list-style: none;
 }
+.secondary-nav {
+  background: white;
+  list-style: none;
+}
 .pad {
     padding: 1rem 5% 3rem 5%;
 }
@@ -69,10 +90,30 @@ export default {
     font-weight: bold;
     color: white;
 }
+.secondary-nav .nav-link {
+    font-family: "Verdana";
+    font-size: 12px;
+    font-weight: bold;
+    color: #888888;
+}
+.secondary-nav .navbar-text {
+  font-family: "Verdana";
+  color: black;
+  font-size: 15px;
+  padding-left: 3rem;
+}
+.orient-right {
+  position: fixed;
+  top: 5px;
+  right: 0;
+  /* margin: 0;
+  border: 0;
+  padding: 0; */
+}
 .button {
 	display: inline-block;
 	margin: 4px 2px;
-	background-color: #f00;
+	background-color: #c12a2a;
 	font-size: 14px;
 	padding-left: 32px;
 	padding-right: 32px;
@@ -100,9 +141,11 @@ export default {
 .search-container {
 	position: relative;
 	display: inline-block;
-	margin: 4px 2px;
-	height: 50px;
-	width: 50px;
+  /* top: -5px; */
+  border-left: 1px solid #888888;
+	/* margin: 4px 2px; */
+	height: 65px;
+	width: 62px;
 	vertical-align: bottom;
 }
 
@@ -117,10 +160,13 @@ export default {
 
 .searchbutton {
 	position: absolute;
-	font-size: 22px;
+  /* top: 5px; */
+	font-size: 30px;
 	width: 100%;
+  height: 100%;
 	margin: 0;
 	padding: 0;
+  padding-top: 2px;
 }
 
 .search:focus + .searchbutton {
@@ -162,11 +208,4 @@ export default {
   padding: 0 0 0 16px;
 }
 
-.orient-right {
-  position: fixed;
-  right: 0;
-  margin: 0;
-  border: 0;
-  padding: 0;
-}
 </style>
