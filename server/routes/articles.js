@@ -18,6 +18,36 @@ const getTags = async (id) => {
     return tags;
 };
 
+router.get('/recent', async (req, res) => {
+    const numArticles = 6;
+    const query = {
+        text: `
+            SELECT a.*, c.id category_id, c.label category_label, au.full_name author_full_name
+            FROM articles a
+            LEFT JOIN authors au
+                ON a.author = au.id
+            LEFT JOIN categories c
+                ON a.category = c.id
+            WHERE CURRENT_TIMESTAMP >= a.date_visible
+            ORDER BY a.date_created DESC
+            LIMIT $1
+        `,
+        values: [numArticles],
+    };
+
+    const { rows: articles, rowCount: articlesCount } = await db.query(query);
+    for (let i = 0; i < articlesCount; i++) {
+        articles[i].tags = await getTags(articles[i].id);
+    }
+
+    const out = {
+        articles: articles,
+        count: articlesCount,
+    }
+
+    res.send(db.wrap(out));
+});
+
 router.get('/home', async (req, res) => {
     const numArticles = 8;
     const numFeaturedArticles = 2;

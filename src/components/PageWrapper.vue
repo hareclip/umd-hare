@@ -42,7 +42,19 @@
         <hr class="mx-2 mt-2 d-none d-md-block"/>
         <div class="pad">
             <loader :loaded="loaded">
-                <slot></slot>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <just-in-list :recentArticles="recentArticles"/>
+                        </div>
+                        <div class="col-8">
+                            <slot></slot>
+                        </div>
+                        <div class="col">
+                            ad goes here
+                        </div>
+                    </div>
+                </div>
             </loader>
         </div>
     </div>
@@ -50,11 +62,13 @@
 
 <script>
 import Loader from '@/components/Loader'
+import JustInList from '@/components/JustInList'
 
 export default {
     name: 'PageWrapper',
     components: {
         Loader,
+        JustInList,
     },
     props: {
         'loaded': {
@@ -63,8 +77,23 @@ export default {
         }
     },
     data () {
-        return {}
+        return {
+            recentArticles: [],
+        }
     },
+    methods: {
+        async load () {
+            try {
+                const response = await this.$http.get(`/api/articles/recent`)
+                this.recentArticles = response.data.data.articles
+            } catch (ex) {
+                console.log(ex);
+            }
+        }
+    },
+    mounted () {
+        this.load();
+    }
 }
 </script>
 

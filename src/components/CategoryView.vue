@@ -10,12 +10,14 @@
 <script>
 import PageWrapper from '@/components/PageWrapper'
 import ArticleList from '@/components/ArticleList'
+import JustInList from '@/components/JustInList'
 
 export default {
     name: 'Category',
     components: {
         PageWrapper,
         ArticleList,
+        JustInList,
     },
     data () {
         return {
@@ -77,6 +79,7 @@ h2 {
   text-align: left;
   color: #aaaaaa;
 }
+
 @media screen and (max-width: 768px) {
     .list {
         margin: 0 !important;
