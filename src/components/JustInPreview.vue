@@ -27,7 +27,6 @@ export default {
         const dateVisible = moment(this.article.dateVisible);
         const date = dateCreated.isAfter(dateVisible) ? dateCreated : dateVisible;
         this.daysAgo = (new moment()).diff(date, 'days');
-        console.log(this.daysAgo);
     }
 }
 </script>
