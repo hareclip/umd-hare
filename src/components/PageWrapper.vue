@@ -47,11 +47,8 @@
                         <div class="col">
                             <just-in-list :recentArticles="recentArticles"/>
                         </div>
-                        <div class="col-8">
+                        <div class="col-9">
                             <slot></slot>
-                        </div>
-                        <div class="col">
-                            ad goes here
                         </div>
                     </div>
                 </div>
@@ -235,6 +232,14 @@ export default {
 
 .expandright:focus {
   padding: 0 0 0 16px;
+}
+
+.container {
+  float: left;
+  width: 120%;
+         .row {
+            width: 120%;
+         }
 }
 
 </style>
