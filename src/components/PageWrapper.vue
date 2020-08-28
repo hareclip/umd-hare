@@ -39,12 +39,12 @@
         <hr class="mx-2 mt-2 d-none d-md-block"/>
         <div class="pad">
             <loader :loaded="loaded">
-                <div class="container">
-                    <div class="row">
+                <div id="container" class="container">
+                    <div id="row" class="row">
                         <div class="col">
                             <just-in-list :recentArticles="recentArticles"/>
                         </div>
-                        <div class="col-9">
+                        <div class="col-8">
                             <slot></slot>
                         </div>
                     </div>
@@ -136,9 +136,7 @@ export default {
 .button {
 	display: inline-block;
 	margin: 4px 2px;
-	background-color: #c12a2a;
-	font-size: 14px;
-	padding-left: 32px;
+	background-color: #c12a2a; font-size: 14px; padding-left: 32px;
 	padding-right: 32px;
 	height: 48px;
 	line-height: 48px;
@@ -233,10 +231,5 @@ export default {
 
 .container {
   float: left;
-  width: 120%;
-         .row {
-            width: 120%;
-         }
 }
-
 </style>
