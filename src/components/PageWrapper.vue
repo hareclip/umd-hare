@@ -34,9 +34,6 @@
             <b-nav-item href="#/category/?" class="px-1 ">Jobs</b-nav-item>
             <b-nav-item href="#/category/?" class="px-1 ">Merchandise</b-nav-item>
             <b-nav-item href="#/category/?" class="px-1 ">Submissions</b-nav-item>
-
-            </b-nav>
-
         </b-navbar>
 
         <hr class="mx-2 mt-2 d-none d-md-block"/>
@@ -51,7 +48,6 @@
                             <slot></slot>
                         </div>
                         <div class="col">
-                            ad goes here
                         </div>
                     </div>
                 </div>
