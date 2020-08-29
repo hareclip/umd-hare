@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="/static/banner_square.png" alt="square banner" width="270px" height="270px"/>
+        <img src="/static/banner_square.png" alt="square banner" width="240px" height="240px"/>
         <h2>Just In...</h2>
         <hr/>
         <just-in-preview v-for="article in recentArticles" :key="article.id" :article="article"/>
