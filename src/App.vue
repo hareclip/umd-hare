@@ -43,7 +43,7 @@ html, body {
     /* min-width: fit-content; */
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+    overflow-x: initial;
 }
 a {
     color: #404040;
@@ -83,7 +83,7 @@ a.inv:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
+
 }
 .nav-link, .nav-left-link, .btn {
     color: #e0e0e0 !important;
@@ -111,7 +111,7 @@ a.inv:hover {
     width: 100%;
     height: 10rem;
     font-size: 1.4em;
-    font-family: Georgia,Times,Times New Roman,serif; 
+    font-family: Georgia,Times,Times New Roman,serif;
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
