@@ -38,8 +38,8 @@
         <hr class="mx-2 mt-2 d-none d-md-block"/>
         <div class="pad">
             <loader :loaded="loaded">
-                <div id="container" class="container">
-                    <div id="row" class="row">
+                <div class="container">
+                    <div class="row">
                         <div class="col-3">
                             <just-in-list/>
                         </div>
@@ -93,11 +93,12 @@ export default {
 }
 .nav-link {
     font-family: "Arial";
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: white;
 }
 .secondary-nav .nav-link {
+    margin-top: 2px;
     font-family: "Verdana";
     font-size: 12px;
     font-weight: bold;
