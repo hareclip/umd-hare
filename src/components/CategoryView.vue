@@ -4,6 +4,9 @@
         <h2>{{description}}</h2>
         <hr/>
         <article-list :articles="articles" class="list mx-5 mb-4"/>
+        <hr/>
+        View more articles in 
+        <router-link to="/archives/0" style="color:blue">Archives</router-link>
     </page-wrapper>
 </template>
 
