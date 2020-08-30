@@ -38,8 +38,8 @@
         <hr class="mx-2 mt-2 d-none d-md-block"/>
         <div class="pad">
             <loader :loaded="loaded">
-                <div id="container" class="container">
-                    <div id="row" class="row">
+                <div iclass="container">
+                    <div class="row">
                         <div class="col">
                             <just-in-list/>
                         </div>
@@ -83,14 +83,25 @@ export default {
 .hello-nav {
   background: #c12a2a;
   list-style: none;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
 }
+
 .secondary-nav {
   background: white;
   list-style: none;
+  position: fixed;
+  top: 68px;
+  z-index: 10;
 }
 .pad {
-    padding: 1rem 5% 3rem 5%;
+    padding: 8rem 5% 3rem 5%;
 }
+/* .secondary-nav + .pad {
+  padding-top: 120px;
+} */
 .nav-link {
     font-family: "Arial";
     font-size: 24px;
@@ -149,7 +160,7 @@ export default {
   /* top: -5px; */
   border-left: 1px solid #888888;
 	/* margin: 4px 2px; */
-	height: 65px;
+	height: 58px;
 	width: 62px;
 	vertical-align: bottom;
 }
@@ -215,5 +226,10 @@ export default {
 
 .container {
   float: left;
+}
+.just-in {
+  float: left;
+  width: 20%;
+  border-right: 2px solid #dddddd;
 }
 </style>
