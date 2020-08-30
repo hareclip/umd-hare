@@ -23,16 +23,16 @@
         </b-navbar>
 
         <b-navbar class="secondary-nav d-none d-md-flex" align="left">
-            <b-nav-text class="">More:</b-nav-text>
-            <b-nav-item href="#/category/2" class="px-1 ">Advertising</b-nav-item>
-            <b-nav-item href="#/category/5" class="px-1 ">Contact</b-nav-item>
-            <b-nav-item href="#/category/6" class="px-1 ">Donate</b-nav-item>
-            <b-nav-item href="#/category/4" class="px-1 ">Comedy on Campus</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Our Publishing Schedule</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Podcast</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Jobs</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Merchandise</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Submissions</b-nav-item>
+            <b-nav-text id="more">More:</b-nav-text>
+            <b-nav-item href="https://drive.google.com/file/d/1ouubjkUdwNUXw2EuJrQNblxd0C19TNLu/view?usp=sharing" class="px-1 ">Advertising</b-nav-item>
+            <b-nav-item href="mailto:theumdhare@gmail.com" class="px-1 ">Contact</b-nav-item>
+            <b-nav-item href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7KG7N8HC9ZPW&source=url" class="px-1 ">Donate</b-nav-item>
+            <b-nav-item href="#/comedy" class="px-1 ">Comedy on Campus</b-nav-item>
+            <b-nav-item href="https://docs.google.com/spreadsheets/d/1pJdcs-2XkfnB07OKGQ4hENCCBE6IPPqrYhdRFnSqguU/edit?usp=sharing" class="px-1 ">Our Publishing Schedule</b-nav-item>
+            <b-nav-item href="https://theumdhare.buzzsprout.com/" class="px-1 ">Podcast</b-nav-item>
+            <b-nav-item href="http://ter.ps/satire" class="px-1 ">Jobs</b-nav-item>
+            <b-nav-item href="https://www.redbubble.com/people/TheUMDHare/shop?asc=u" class="px-1 ">Merchandise</b-nav-item>
+            <b-nav-item href="http://ter.ps/submit2hare" class="px-1 ">Submissions</b-nav-item>
         </b-navbar>
 
         <hr class="mx-2 mt-2 d-none d-md-block"/>
@@ -76,6 +76,12 @@ export default {
 </script>
 
 <style scoped>
+#more {
+  color:#888888;
+  font-weight:bold;
+  font-size:12px;
+  margin-top: 2px;
+}
 .outer-wrapper {
     width: 100%;
     height: 100%;
