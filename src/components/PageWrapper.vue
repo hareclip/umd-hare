@@ -7,7 +7,7 @@
             <b-nav-item href="#/category/6" class="px-2 ">Art</b-nav-item>
             <b-nav-item href="#/category/4" class="px-2 ">Rabbithole</b-nav-item>
             <b-nav-item href="#/category/?" class="px-2 ">News in Images</b-nav-item>
-
+            <b-nav-item href="#/archives/0" class="px-2 ">Archives</b-nav-item>
              <!-- right side of navbar -->
             <b-nav class="orient-right">
               <b-nav-item href="https://twitter.com/theumdhare"><icon :icon="['fab', 'twitter']" class="mr-1"/></b-nav-item>
@@ -20,7 +20,6 @@
                 </form>
               </b-nav>
             </b-nav>
-
         </b-navbar>
 
         <b-navbar class="secondary-nav d-none d-md-flex" align="left">
@@ -42,7 +41,7 @@
                 <div id="container" class="container">
                     <div id="row" class="row">
                         <div class="col">
-                            <just-in-list :recentArticles="recentArticles"/>
+                            <just-in-list/>
                         </div>
                         <div class="col-8">
                             <slot></slot>
@@ -71,23 +70,8 @@ export default {
         }
     },
     data () {
-        return {
-            recentArticles: [],
-        }
+        return {}
     },
-    methods: {
-        async load () {
-            try {
-                const response = await this.$http.get(`/api/articles/recent`)
-                this.recentArticles = response.data.data.articles
-            } catch (ex) {
-                console.log(ex);
-            }
-        }
-    },
-    mounted () {
-        this.load();
-    }
 }
 </script>
 

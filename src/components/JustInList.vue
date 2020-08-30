@@ -3,7 +3,7 @@
         <img src="/static/banner_square.png" alt="square banner" width="270px" height="270px"/>
         <h2>Just In...</h2>
         <hr/>
-        <just-in-preview v-for="article in recentArticles" :key="article.id" :article="article"/>
+        <just-in-preview v-for="article in articles" :key="article.id" :article="article"/>
     </div>
 </template>
 
@@ -15,7 +15,24 @@ export default {
     components: {
         JustInPreview,
     },
-    props: ['recentArticles'],
+    data() {
+      return {
+        articles: [],
+      }
+    },
+    methods: {
+      async load() {
+        try {
+            const response = await this.$http.get(`/api/articles/?amount=6`)
+            this.articles = response.data.data.articles
+        } catch (ex) {
+            console.log(ex);
+        }
+      }
+    },
+    mounted() {
+      this.load();
+    }
 }
 </script>
 <style scoped>

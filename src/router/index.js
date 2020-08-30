@@ -6,6 +6,7 @@ import CategoryView from '@/components/CategoryView'
 import PublishArticle from '@/components/PublishArticle'
 import CreateUser from '@/components/CreateUser'
 import DeleteArticle from '@/components/DeleteArticle'
+import ArchivesList from '@/components/ArchivesList';
 
 Vue.use(Router)
 
@@ -57,7 +58,15 @@ export default new Router({
             meta: {
                 title: 'Delete Article'
             }
-        }
+        },
+        {
+            path: '/archives/:page?',
+            name: 'ArchivesList',
+            component: ArchivesList,
+            meta: {
+                title: 'ArchivesList'
+            }
+        },
     ],
     scrollBehavior(to, from, savedPosition) {
         return { x: 0, y: 0 }
