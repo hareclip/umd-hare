@@ -11,14 +11,14 @@
       :to="{ path: '/archives/' + (parseInt(this.$route.params.page) - 1) }"
       v-if="$route.params.page > 0"
     >
-      prev</router-link
-    >
+      prev
+    </router-link>
     <router-link
       :to="{ path: '/archives/' + (parseInt(this.$route.params.page) + 1) }"
       v-if="articles.length === 20"
     >
-      next</router-link
-    >
+      next
+  </router-link>
   </page-wrapper>
 </template>
 
@@ -57,3 +57,6 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+</style>

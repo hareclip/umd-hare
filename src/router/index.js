@@ -64,7 +64,7 @@ export default new Router({
             name: 'ArchivesList',
             component: ArchivesList,
             meta: {
-                title: 'ArchivesList'
+                title: 'Archives | Hare'
             }
         },
     ],
