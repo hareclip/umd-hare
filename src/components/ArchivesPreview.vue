@@ -39,7 +39,7 @@ export default {
 }
 
 #title {
-  font-family: 'Helvetica', 'Ariel';
-  font-size: 24pt;
+  font-family: 'Helvetica', 'Georgia';
+  font-size: 20pt;
 }
 </style>
