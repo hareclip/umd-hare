@@ -93,7 +93,7 @@ export default {
 .secondary-nav {
   background: white;
   list-style: none;
-  height: 20px;
+  height: 30px;
   margin-top: 5px;
 }
 .pad {
