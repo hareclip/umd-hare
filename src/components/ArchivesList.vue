@@ -1,6 +1,6 @@
 <template>
   <page-wrapper :loaded="loaded">
-    <h1>Archives</h1>
+    <h1 class="title">Archives</h1>
     <hr />
     <archives-preview
       v-for="article in articles"
@@ -59,4 +59,7 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  font-family: Helvetica, Georgia;
+}
 </style>

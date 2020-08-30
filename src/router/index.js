@@ -6,10 +6,10 @@ import CategoryView from '@/components/CategoryView'
 import PublishArticle from '@/components/PublishArticle'
 import CreateUser from '@/components/CreateUser'
 import DeleteArticle from '@/components/DeleteArticle'
-import ArchivesList from '@/components/ArchivesList';
+import ArchivesList from '@/components/ArchivesList'
+import ComedyPage from '@/components/ComedyPage'
 
 Vue.use(Router)
-
 export default new Router({
     routes: [
         {
@@ -67,6 +67,14 @@ export default new Router({
                 title: 'Archives | Hare'
             }
         },
+        {
+            path: '/comedy',
+            name: 'ComedyPage',
+            component: ComedyPage,
+            meta: {
+                title: 'Comedy | Hare'
+            }
+        }
     ],
     scrollBehavior(to, from, savedPosition) {
         return { x: 0, y: 0 }
