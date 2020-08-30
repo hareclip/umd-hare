@@ -87,6 +87,8 @@ export default {
 .secondary-nav {
   background: white;
   list-style: none;
+  height: 20px;
+  margin-top: 5px;
 }
 .pad {
     padding: 1rem 5% 3rem 5%;
