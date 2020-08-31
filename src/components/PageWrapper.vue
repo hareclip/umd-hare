@@ -100,8 +100,8 @@ export default {
     padding: 1rem 5% 3rem 5%;
 }
 .nav-link {
-    font-family: "Arial";
-    font-size: 20px;
+    font-family: Arial;
+    font-size: 16px;
     font-weight: bold;
     color: white;
 }
