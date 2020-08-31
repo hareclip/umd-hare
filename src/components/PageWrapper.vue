@@ -1,13 +1,13 @@
 <template>
     <div class="outer-wrapper">
         <b-navbar class="hello-nav d-none d-md-flex" align="left">
-            <b-nav-item href="#/category/1" class="px-2 ">News</b-nav-item>
-            <b-nav-item href="#/category/2" class="px-2 ">Features</b-nav-item>
-            <b-nav-item href="#/category/5" class="px-2 ">Sports</b-nav-item>
-            <b-nav-item href="#/category/6" class="px-2 ">Art</b-nav-item>
-            <b-nav-item href="#/category/4" class="px-2 ">Rabbithole</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-2 ">News in Images</b-nav-item>
-            <b-nav-item href="#/archives/0" class="px-2 ">Archives</b-nav-item>
+            <b-nav-item href="#/category/1" class="px-1 ">News</b-nav-item>
+            <b-nav-item href="#/category/2" class="px-1 ">Features</b-nav-item>
+            <b-nav-item href="#/category/5" class="px-1 ">Sports</b-nav-item>
+            <b-nav-item href="#/category/6" class="px-1 ">Art</b-nav-item>
+            <b-nav-item href="#/category/4" class="px-1 ">Rabbithole</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">News in Images</b-nav-item>
+            <b-nav-item href="#/archives/0" class="px-1 ">Archives</b-nav-item>
              <!-- right side of navbar -->
             <b-nav class="orient-right">
               <b-nav-item href="https://twitter.com/theumdhare"><icon :icon="['fab', 'twitter']" class="mr-1"/></b-nav-item>
