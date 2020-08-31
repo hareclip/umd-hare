@@ -28,7 +28,7 @@
             <b-nav-item href="mailto:theumdhare@gmail.com" class="px-1 ">Contact</b-nav-item>
             <b-nav-item href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7KG7N8HC9ZPW&source=url" class="px-1 ">Donate</b-nav-item>
             <b-nav-item href="#/comedy" class="px-1 ">Comedy on Campus</b-nav-item>
-            <b-nav-item href="https://docs.google.com/spreadsheets/d/1pJdcs-2XkfnB07OKGQ4hENCCBE6IPPqrYhdRFnSqguU/edit?usp=sharing" class="px-1 ">Our Publishing Schedule</b-nav-item>
+            <b-nav-item href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRv-wpY_P3w5tB7LnTGdcrMptOkd-AOoxzGYpYn39tv96DJEAugZQJPJj81AONui2wdf9qQGjXp8cBd/pubhtml" class="px-1 ">Our Publishing Schedule</b-nav-item>
             <b-nav-item href="https://theumdhare.buzzsprout.com/" class="px-1 ">Podcast</b-nav-item>
             <b-nav-item href="http://ter.ps/satire" class="px-1 ">Jobs</b-nav-item>
             <b-nav-item href="https://www.redbubble.com/people/TheUMDHare/shop?asc=u" class="px-1 ">Merchandise</b-nav-item>
