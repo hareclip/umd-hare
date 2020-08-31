@@ -34,12 +34,10 @@ export default {
 <style scoped>
 #article {
   text-align: left;
-  font-family: Verdana;
   font-size: 11pt;
 }
 
 #title {
-  font-family: Helvetica, Georgia;
   font-size: 20pt;
 }
 </style>

@@ -105,14 +105,12 @@ export default {
 
 <style scoped>
 .text {
-  font-family: Georgia, Times, "Times New Roman", serif;
   text-align: left;
   line-height: 1.6;
   font-size: 1.25em;
   overflow-wrap: break-word;
 }
 .headline {
-  font-family: Georgia, Times, "Times New Roman", serif;
   text-align: left;
   line-height: 1.15;
   font-weight: bold;
@@ -134,7 +132,6 @@ export default {
   flex-direction: row;
 }
 .info-line {
-  font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1.25em;
   color: #555;
 }

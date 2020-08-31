@@ -25,11 +25,7 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  font-family: Helvetica, Georgia;
-}
 .content {
-  font-family: Verdana;
   font-size: 14pt;
 }
 </style>

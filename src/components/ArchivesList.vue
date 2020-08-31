@@ -59,7 +59,4 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  font-family: Helvetica, Georgia;
-}
 </style>
