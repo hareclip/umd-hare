@@ -100,7 +100,7 @@ export default {
   width: 100%;
   list-style: none;
   position: fixed;
-  top: 60px;
+  top: 50px;
   z-index: 10;
 }
 .pad {
@@ -113,7 +113,6 @@ export default {
     color: white;
 }
 .secondary-nav .nav-link {
-    margin-top: 2px;
     font-family: "Verdana";
     font-size: 12px;
     font-weight: bold;
@@ -168,6 +167,7 @@ export default {
   height: 58px;
 	width: 62px;
 	vertical-align: bottom;
+  margin-top: -5px;
 }
 
 .mglass {
@@ -187,7 +187,6 @@ export default {
   height: 100%;
 	margin: 0;
 	padding: 0;
-  padding-top: 2px;
 }
 
 .search:focus + .searchbutton {
