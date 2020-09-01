@@ -29,9 +29,11 @@
                         <b-col class="border-right">
                           <b-row class="px-3" v-for="(article, i) in leftArticles" :key="article.id">
                             <hr v-if="i > 0" />
-                            <arl :article="article">
-                                <preview-image :article="article" class="mb-2 border-top border-danger shadow-sm"/>
-                            </arl>
+                            <div class="article-image">
+                              <arl :article="article">
+                                  <preview-image :article="article" class="mb-2 border-top border-danger shadow-sm"/>
+                              </arl>
+                            </div>
                             <div class="mb-2"><arl :article="article" class="title-link-small">{{article.title}}</arl></div>
                             <preview-text :article="article" :chars="200" class="text"/>
                           </b-row>
@@ -43,9 +45,12 @@
                         <b-col class="border-right">
                           <b-row class="px-3" v-for="(article, i) in rightArticles" :key="article.id">
                             <hr v-if="i > 0" />
-                            <arl :article="article">
-                                <preview-image :article="article" class="mb-2 border-top border-danger shadow-sm"/>
-                            </arl>
+                            <div class="article-image">
+                              <arl :article="article">
+                                  <preview-image :article="article" class="mb-2 border-top border-danger shadow-sm"/>
+                              </arl>
+                            </div>
+
                             <div class="mb-2"><arl :article="article" class="title-link-small">{{article.title}}</arl></div>
                             <preview-text :article="article" :chars="200" class="text"/>
                           </b-row>
@@ -282,7 +287,12 @@ export default {
 
 #feature-title {
   align: "left";
-  
+
+}
+
+.article-image {
+  width: 100%;
+  height: auto;
 }
 
 </style>
