@@ -98,7 +98,7 @@ export default {
   background: white;
   list-style: none;
   position: fixed;
-  top: 68px;
+  top: 60px;
   z-index: 10;
 }
 .pad {
