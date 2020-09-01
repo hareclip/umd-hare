@@ -89,15 +89,20 @@ export default {
 .hello-nav {
   background: #c12a2a;
   list-style: none;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
 }
 .secondary-nav {
   background: white;
   list-style: none;
-  height: 30px;
-  margin-top: 5px;
+  position: fixed;
+  top: 68px;
+  z-index: 10;
 }
 .pad {
-    padding: 1rem 5% 3rem 5%;
+  padding: 8rem 5% 3rem 5%;
 }
 .nav-link {
     font-family: Arial;
@@ -158,7 +163,7 @@ export default {
   /* top: -5px; */
   border-left: 1px solid #888888;
 	/* margin: 4px 2px; */
-	height: 65px;
+  height: 58px;
 	width: 62px;
 	vertical-align: bottom;
 }
@@ -224,5 +229,14 @@ export default {
 
 .container {
   float: left;
+  width: 120%;
+  .row {
+    width: 120%;
+  }
+}
+.just-in {
+  float: left;
+  width: 20%;
+  border-right: 2px solid #dddddd;
 }
 </style>
