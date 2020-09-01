@@ -1,13 +1,13 @@
 <template>
     <div class="outer-wrapper">
         <b-navbar class="hello-nav d-none d-md-flex" align="left">
-            <b-nav-item href="#/category/1" class="px-2 ">News</b-nav-item>
-            <b-nav-item href="#/category/2" class="px-2 ">Features</b-nav-item>
-            <b-nav-item href="#/category/5" class="px-2 ">Sports</b-nav-item>
-            <b-nav-item href="#/category/6" class="px-2 ">Art</b-nav-item>
-            <b-nav-item href="#/category/4" class="px-2 ">Rabbithole</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-2 ">News in Images</b-nav-item>
-
+            <b-nav-item href="#/category/1" class="px-1 ">News</b-nav-item>
+            <b-nav-item href="#/category/2" class="px-1 ">Features</b-nav-item>
+            <b-nav-item href="#/category/5" class="px-1 ">Sports</b-nav-item>
+            <b-nav-item href="#/category/6" class="px-1 ">Art</b-nav-item>
+            <b-nav-item href="#/category/4" class="px-1 ">Rabbithole</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1 ">News in Images</b-nav-item>
+            <b-nav-item href="#/archives/0" class="px-1 ">Archives</b-nav-item>
              <!-- right side of navbar -->
             <b-nav class="orient-right">
               <b-nav-item href="https://twitter.com/theumdhare"><icon :icon="['fab', 'twitter']" class="mr-1"/></b-nav-item>
@@ -20,20 +20,19 @@
                 </form>
               </b-nav>
             </b-nav>
-
         </b-navbar>
 
         <b-navbar class="secondary-nav d-none d-md-flex" align="left">
-            <b-nav-text class="">More:</b-nav-text>
-            <b-nav-item href="#/category/2" class="px-1 ">Advertising</b-nav-item>
-            <b-nav-item href="#/category/5" class="px-1 ">Contact</b-nav-item>
-            <b-nav-item href="#/category/6" class="px-1 ">Donate</b-nav-item>
-            <b-nav-item href="#/category/4" class="px-1 ">Comedy on Campus</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Our Publishing Schedule</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Podcast</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Jobs</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Merchandise</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">Submissions</b-nav-item>
+            <b-nav-text id="more">More:</b-nav-text>
+            <b-nav-item href="https://drive.google.com/file/d/1ouubjkUdwNUXw2EuJrQNblxd0C19TNLu/view?usp=sharing" class="px-1 ">Advertising</b-nav-item>
+            <b-nav-item href="mailto:theumdhare@gmail.com" class="px-1 ">Contact</b-nav-item>
+            <b-nav-item href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7KG7N8HC9ZPW&source=url" class="px-1 ">Donate</b-nav-item>
+            <b-nav-item href="#/comedy" class="px-1 ">Comedy on Campus</b-nav-item>
+            <b-nav-item href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRv-wpY_P3w5tB7LnTGdcrMptOkd-AOoxzGYpYn39tv96DJEAugZQJPJj81AONui2wdf9qQGjXp8cBd/pubhtml" class="px-1 ">Our Publishing Schedule</b-nav-item>
+            <b-nav-item href="https://theumdhare.buzzsprout.com/" class="px-1 ">Podcast</b-nav-item>
+            <b-nav-item href="http://ter.ps/satire" class="px-1 ">Jobs</b-nav-item>
+            <b-nav-item href="https://www.redbubble.com/people/TheUMDHare/shop?asc=u" class="px-1 ">Merchandise</b-nav-item>
+            <b-nav-item href="http://ter.ps/submit2hare" class="px-1 ">Submissions</b-nav-item>
         </b-navbar>
 
         <hr class="mx-2 mt-2 d-none d-md-block"/>
@@ -43,6 +42,7 @@
                     <div class="row">
                         <div class="col just-in">
                             <just-in-list :recentArticles="recentArticles"/>
+
                         </div>
                         <div class="col-9">
                             <slot></slot>
@@ -71,27 +71,18 @@ export default {
         }
     },
     data () {
-        return {
-            recentArticles: [],
-        }
+        return {}
     },
-    methods: {
-        async load () {
-            try {
-                const response = await this.$http.get(`/api/articles/recent`)
-                this.recentArticles = response.data.data.articles
-            } catch (ex) {
-                console.log(ex);
-            }
-        }
-    },
-    mounted () {
-        this.load();
-    }
 }
 </script>
 
 <style scoped>
+#more {
+  color:#888888;
+  font-weight:bold;
+  font-size:12px;
+  margin-top: 2px;
+}
 .outer-wrapper {
     width: 100%;
     height: 100%;
@@ -99,33 +90,25 @@ export default {
 .hello-nav {
   background: #c12a2a;
   list-style: none;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  width: 100%;
 }
-
 .secondary-nav {
   background: white;
   width: 100%;
   list-style: none;
-  position: fixed;
-  top: 68px;
-  z-index: 10;
+  height: 30px;
+  margin-top: 5px;
 }
 .pad {
-    padding: 8rem 5% 3rem 5%;
+    padding: 1rem 5% 3rem 5%;
 }
-/* .secondary-nav + .pad {
-  padding-top: 120px;
-} */
 .nav-link {
-    font-family: "Arial";
-    font-size: 24px;
+    font-family: Arial;
+    font-size: 16px;
     font-weight: bold;
     color: white;
 }
 .secondary-nav .nav-link {
+    margin-top: 2px;
     font-family: "Verdana";
     font-size: 12px;
     font-weight: bold;
@@ -177,7 +160,7 @@ export default {
   /* top: -5px; */
   border-left: 1px solid #888888;
 	/* margin: 4px 2px; */
-	height: 58px;
+	height: 65px;
 	width: 62px;
 	vertical-align: bottom;
 }
@@ -243,10 +226,5 @@ export default {
 
 .container {
   float: left;
-}
-.just-in {
-  float: left;
-  width: 20%;
-  border-right: 2px solid #dddddd;
 }
 </style>

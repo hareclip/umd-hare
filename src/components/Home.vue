@@ -120,7 +120,6 @@ export default {
 /* .hero {
     color: #c0c0c0;
     background-color: #aa0000;
-    font-family: serif;
 }
 .hello-nav {
     min-width: 75%;
@@ -130,7 +129,6 @@ export default {
     text-decoration: none;
 }
 .nav-link {
-    font-family: serif;
     font-size: 1.5rem;
 }
 /* .banner {

@@ -6,9 +6,10 @@ import CategoryView from '@/components/CategoryView'
 import PublishArticle from '@/components/PublishArticle'
 import CreateUser from '@/components/CreateUser'
 import DeleteArticle from '@/components/DeleteArticle'
+import ArchivesList from '@/components/ArchivesList'
+import ComedyPage from '@/components/ComedyPage'
 
 Vue.use(Router)
-
 export default new Router({
     routes: [
         {
@@ -56,6 +57,22 @@ export default new Router({
             component: DeleteArticle,
             meta: {
                 title: 'Delete Article'
+            }
+        },
+        {
+            path: '/archives/:page?',
+            name: 'ArchivesList',
+            component: ArchivesList,
+            meta: {
+                title: 'Archives | Hare'
+            }
+        },
+        {
+            path: '/comedy',
+            name: 'ComedyPage',
+            component: ComedyPage,
+            meta: {
+                title: 'Comedy | Hare'
             }
         }
     ],

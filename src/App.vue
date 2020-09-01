@@ -61,13 +61,13 @@ a.inv:hover {
 
 <style scoped>
 #app {
-    font-family: serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
     min-height: 100% !important;
     position: relative;
+    font-family: Georgia;
 }
 #app-inner {
     display: flex;
@@ -94,7 +94,6 @@ a.inv:hover {
     width: 100%;
     text-align: left;
     padding: 1rem 2rem 0.7rem 1rem;
-    font-family: sans-serif;
 }
 #search-dropdown.b-dropdown-form {
     padding: 0 0.5rem;
@@ -111,7 +110,6 @@ a.inv:hover {
     width: 100%;
     height: 10rem;
     font-size: 1.4em;
-    font-family: Georgia,Times,Times New Roman,serif;
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
