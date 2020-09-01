@@ -41,7 +41,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col just-in">
-                            <just-in-list :recentArticles="recentArticles"/>
+                            <just-in-list/>
 
                         </div>
                         <div class="col-9">
