@@ -1,7 +1,7 @@
 <template>
     <div>
-        <router-link to="/"><img src="/static/banner_square.png" alt="square banner" width="90%" height="90%"/></router-link>
-        <h2>This Just In...</h2>
+        <img src="/static/banner_square.png" alt="square banner" width="90%" height="90%"/>
+        <h2 style="font-family:'Helvetica'">Just In...</h2>
         <hr/>
         <just-in-preview v-for="article in articles" :key="article.id" :article="article"/>
     </div>
