@@ -271,15 +271,12 @@ export default {
 } */
 
 .title-link {
-  font-family: "Helvetica";
   font-size: 26px;
 }
 .title-link-small {
-  font-family: "Helvetica";
   font-size: 20px;
 }
 .text {
-  font-family: "Verdana";
   font-size: 13px;
 }
 
