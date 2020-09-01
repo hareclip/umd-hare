@@ -1,7 +1,7 @@
 <template>
     <div id="article">
         <div id="title"><arl :article="article">{{article.title}}</arl></div>
-        {{article.authorFullName}} - 
+        {{article.authorFullName}} -
         {{daysAgo}} days ago
         <hr/>
     </div>
@@ -34,9 +34,11 @@ export default {
 <style scoped>
 #article {
   text-align: left;
+  font-family: "Helvetica","Arial";
 }
 
 #title {
   font-weight: bold;
+  font-family: "Helvetica","Arial";
 }
 </style>
