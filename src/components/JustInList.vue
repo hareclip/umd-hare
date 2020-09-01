@@ -1,7 +1,7 @@
 <template>
     <div>
         <img src="/static/banner_square.png" alt="square banner" width="90%" height="90%"/>
-        <h2>Just In...</h2>
+        <h2 style="font-family:'Helvetica'">Just In...</h2>
         <hr/>
         <just-in-preview v-for="article in recentArticles" :key="article.id" :article="article"/>
     </div>

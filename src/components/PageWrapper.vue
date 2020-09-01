@@ -42,10 +42,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col just-in">
-
                             <just-in-list :recentArticles="recentArticles"/>
                         </div>
-                        <div class="col-8">
+                        <div class="col-9">
                             <slot></slot>
                         </div>
                     </div>
@@ -108,6 +107,7 @@ export default {
 
 .secondary-nav {
   background: white;
+  width: 100%;
   list-style: none;
   position: fixed;
   top: 68px;
