@@ -102,6 +102,7 @@ export default {
   position: fixed;
   top: 50px;
   z-index: 10;
+  height: 30px;
 }
 .pad {
   padding: 8rem 5% 3rem 5%;

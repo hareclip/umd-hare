@@ -34,11 +34,9 @@ export default {
 <style scoped>
 #article {
   text-align: left;
-  font-family: "Helvetica","Arial";
 }
 
 #title {
   font-weight: bold;
-  font-family: "Helvetica","Arial";
 }
 </style>
