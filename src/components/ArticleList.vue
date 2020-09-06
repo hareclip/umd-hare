@@ -21,7 +21,7 @@
                   <preview-image :article="articles[((2*(n-1))+(m-1))+1]" class="mb-2 border-top border-danger shadow-sm"/>
               </arl>
             </div>
-            <div class="mb-2"><arl :article="articles[((2*(n-1))+(m-1))+1]" class="title-link-small">{{articles[((2*(n-1))+(m-1))].title}}</arl></div>
+            <div class="mb-2"><arl :article="articles[((2*(n-1))+(m-1))+1]" class="title-link-small">{{articles[((2*(n-1))+(m-1))+1].title}}</arl></div>
             <preview-text :article="articles[((2*(n-1))+(m-1))+1]" :chars="200" class="text"/>
 
           </b-col>
