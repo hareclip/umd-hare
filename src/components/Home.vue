@@ -2,15 +2,16 @@
   <page-wrapper :loaded="loaded">
     <div>
         <hr class="mx-5 d-none d-md-block"/>
-        <article-list :articles="articles" class="d-md-none mx-2 mb-4"/>
+        <!-- <article-list :articles="articles" class="d-md-none mx-2 mb-4"/> -->
         <loader :loaded="loaded">
-            <div id="feature-article" class="px-4 border-right">
+          <article-list :articles="this.articles" class="list mx-5 mb-4"/>
+          <!-- <div id="feature-article" class="px-4 border-right">
                 <div v-if="featuredArticleA">
                     <arl :article="featuredArticleA">
                         <preview-image :article="featuredArticleA" class="mb-3 border-top border-danger shadow-sm"/>
                     </arl>
                     <div class="mb-3" id="feature-title"><arl :article="featuredArticleA" class="title-link">{{featuredArticleA.title}}</arl></div>
-                    <!-- <preview-text :article="featuredArticleA" class="text"/> -->
+
                 </div>
                 <hr/>
             </div>
@@ -33,7 +34,7 @@
                 </b-row>
 
               </b-container>
-            </div>
+            </div> -->
         </loader>
     </div>
 
@@ -44,28 +45,28 @@
 import Loader from '@/components/Loader'
 import PageWrapper from '@/components/PageWrapper'
 import ArticleList from '@/components/ArticleList'
-import ArticleImage from '@/components/ArticleImage'
-import ArticlePreviewText from '@/components/ArticlePreviewText'
-import ArticleLink from '@/components/ArticleLink'
-import { BContainer } from 'bootstrap-vue'
+// import ArticleImage from '@/components/ArticleImage'
+// import ArticlePreviewText from '@/components/ArticlePreviewText'
+// import ArticleLink from '@/components/ArticleLink'
+// import { BContainer } from 'bootstrap-vue'
 
 export default {
     name: 'Home',
     components: {
         Loader,
         ArticleList,
-        PageWrapper,
-        'preview-image': ArticleImage,
-        'preview-text': ArticlePreviewText,
-        'arl': ArticleLink,
-        BContainer,
+        PageWrapper
+        // 'preview-image': ArticleImage,
+        // 'preview-text': ArticlePreviewText,
+        // 'arl': ArticleLink,
+        // BContainer,
     },
     data () {
         return {
             loaded: false,
             articles: [],
-            featuredArticleA: {},
-            all_articles: [],
+            // featuredArticleA: {},
+            // all_articles: [],
         }
     },
     methods: {
@@ -73,8 +74,8 @@ export default {
             try {
                 const response = await this.$http.get('/api/articles/home')
                 this.articles = response.data.data.articles
-                this.featuredArticleA = this.articles[0]
-                this.all_articles = this.articles.slice(1,7)
+                // this.featuredArticleA = this.articles[0]
+                // this.all_articles = this.articles.slice(1,7)
 
                 this.loaded = true
             } catch (ex) {
@@ -100,7 +101,7 @@ export default {
 #home-articles {
     text-align: left;
 }
-#feature-article {
+/* #feature-article {
   min-width: 100%;
   --width: calc(var(min-width));
   height: calc(var(--width)*9/16);
@@ -114,8 +115,6 @@ export default {
   font-size: 26px;
 
   text-align: left;
-  /* position: relative;
-  bottom: 50px; */
   z-index: 10;
   background-color: rgba(b,b,b,0.5);
   width: 100%;
@@ -145,13 +144,11 @@ export default {
   background-color: rgba(9,9,9,0.5);
   width: 100%;
   height: 83px;
-  /* line-height: 15%; */
-  /* color: white; */
 }
 
 .article-image {
   width: 100%;
   height: auto;
-}
+} */
 
 </style>
