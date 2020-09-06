@@ -28,7 +28,7 @@ export default {
         } catch (ex) {
             console.log(ex);
         }
-      }
+      },
     },
     mounted() {
       this.load();

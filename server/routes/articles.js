@@ -159,6 +159,36 @@ router.get('/:id', async (req, res) => {
     res.send(db.wrap(article));
 });
 
+router.get('/search', async (req, res) => {
+    const searchTerm = req.query.search;
+
+    const query = {
+        text: `
+            SELECT a.*, c.id category_id, c.label category_label, au.full_name author_full_name
+            FROM articles a
+            LEFT JOIN authors au
+                ON a.author = au.id
+            LEFT JOIN categories c
+                ON a.category = c.id
+            WHERE CURRENT_TIMESTAMP >= a.date_visible AND (author_full_name LIKE $1 OR a.title LIKE $1)
+            ORDER BY a.date_created DESC
+        `,
+        values: ['%#{searchTerm}%'],
+    };
+
+    const { rows: articles, rowCount: articlesCount } = await db.query(query);
+    for (let i = 0; i < articlesCount; i++) {
+        articles[i].tags = await getTags(articles[i].id);
+    }
+
+    const out = {
+        articles: articles,
+        count: articlesCount,
+    }
+
+    res.send(db.wrap(out));
+});
+
 router.get('/', async (req, res) => {
     const amount = req.query.amount || 5;
     const offset = req.query.offset || 0;

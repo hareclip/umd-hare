@@ -1,13 +1,13 @@
 <template>
     <div class="outer-wrapper">
         <b-navbar class="hello-nav d-none d-md-flex" align="left">
-            <b-nav-item href="#/category/1" class="px-1 ">News</b-nav-item>
-            <b-nav-item href="#/category/2" class="px-1 ">Features</b-nav-item>
-            <b-nav-item href="#/category/5" class="px-1 ">Sports</b-nav-item>
-            <b-nav-item href="#/category/6" class="px-1 ">Art</b-nav-item>
-            <b-nav-item href="#/category/4" class="px-1 ">Rabbithole</b-nav-item>
-            <b-nav-item href="#/category/?" class="px-1 ">News in Images</b-nav-item>
-            <b-nav-item href="#/archives/0" class="px-1 ">Archives</b-nav-item>
+            <b-nav-item href="#/category/1" class="px-1" :style="isActiveHeader(1)">News</b-nav-item>
+            <b-nav-item href="#/category/2" class="px-1" :style="isActiveHeader(2)">Opinion</b-nav-item>
+            <b-nav-item href="#/category/5" class="px-1" :style="isActiveHeader(5)">Sports</b-nav-item>
+            <b-nav-item href="#/category/6" class="px-1" :style="isActiveHeader(6)">Entertainment</b-nav-item>
+            <b-nav-item href="#/category/4" class="px-1" :style="isActiveHeader(4)">Rabbithole</b-nav-item>
+            <b-nav-item href="#/category/?" class="px-1">News in Images</b-nav-item>
+            <b-nav-item href="#/archives/0" class="px-1" :style="isActiveHeader('archives')">Archives</b-nav-item>
              <!-- right side of navbar -->
             <b-nav class="orient-right">
               <b-nav-item href="https://twitter.com/theumdhare"><icon :icon="['fab', 'twitter']" class="mr-1"/></b-nav-item>
@@ -72,6 +72,15 @@ export default {
     },
     data () {
         return {}
+    },
+    methods: {
+      isActiveHeader: function (categoryID) {
+        if((this.$route.params.category && parseInt(this.$route.params.category) === categoryID) || (categoryID === 'archives' && this.$route.params.page)) {
+          return {
+            'text-decoration': 'underline',
+          }
+        }
+      }
     },
 }
 </script>

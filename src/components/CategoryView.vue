@@ -50,7 +50,7 @@ export default {
                     case 'Sports':
                         this.description = 'Probably the least controversial thing here.';
                         break;
-                    case 'Art':
+                    case 'Arts':
                         this.description = 'Our writers are probably on something.'
                         break;
                     case 'Rabbithole':
