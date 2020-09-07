@@ -20,6 +20,7 @@ const getTags = async (id) => {
 
 router.get('/search', async (req, res) => {
     const searchTerm = req.query.searchTerm.toLowerCase();
+    const offset = req.query.offset;
 
     const query = {
         text: `
@@ -31,7 +32,10 @@ router.get('/search', async (req, res) => {
                 ON a.category = c.id
             WHERE CURRENT_TIMESTAMP >= a.date_visible AND (LOWER(au.full_name) LIKE '%${searchTerm}%' OR LOWER(a.title) LIKE '%${searchTerm}%')
             ORDER BY a.date_created DESC
-        `
+            LIMIT 20
+            OFFSET $1
+        `,
+        values: [offset],
     };
 
     const { rows: articles, rowCount: articlesCount } = await db.query(query);

@@ -13,12 +13,10 @@
               <b-nav-item href="https://twitter.com/theumdhare"><icon :icon="['fab', 'twitter']" class="mr-1"/></b-nav-item>
               <b-nav-item href="https://www.instagram.com/theumdhare/"><icon :icon="['fab', 'instagram']" class="mr-1"/></b-nav-item>
               <b-nav-item href="https://www.facebook.com/TheUMDHare/"><icon :icon="['fab', 'facebook']" class="mr-2"/></b-nav-item>
-              <b-nav class="search-container">
-                <form action="/search" method="get">
-                  <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
-                  <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+                <form class="form-inline my-2 my-lg-0" id="searchbar" @submit.prevent="submitForm">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" v-model="search">
+                  <button class="btn btn-secondary my-2 my-sm-0" id="searchbutton" type="submit">Search</button>
                 </form>
-              </b-nav>
             </b-nav>
         </b-navbar>
 
@@ -71,14 +69,22 @@ export default {
         }
     },
     data () {
-        return {}
+      return {
+        search: '',
+      }
     },
     methods: {
       isActiveHeader: function (categoryID) {
-        if((this.$route.params.category && parseInt(this.$route.params.category) === categoryID) || (categoryID === 'archives' && this.$route.params.page)) {
+        if(this.$route.name !== 'Search' && ((this.$route.params.category && parseInt(this.$route.params.category) === categoryID) || (categoryID === 'archives' && this.$route.params.page))) {
+          console.log(this.$route);
           return {
             'text-decoration': 'underline',
           }
+        }
+      },
+      submitForm: function() {
+        if(this.search.length > 0) {
+          this.$router.push('/search/0?searchTerm=' + this.search);
         }
       }
     },
@@ -142,101 +148,6 @@ export default {
   border: 0;
   padding: 0; */
 }
-.button {
-	display: inline-block;
-	margin: 4px 2px;
-	background-color: #c12a2a; font-size: 14px; padding-left: 32px;
-	padding-right: 32px;
-	height: 48px;
-	line-height: 48px;
-	text-align: center;
-	color: white;
-	text-decoration: none;
-	cursor: pointer;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-.button:hover {
-	transition-duration: 0.4s;
-	-moz-transition-duration: 0.4s;
-	-webkit-transition-duration: 0.4s;
-	-o-transition-duration: 0.4s;
-	background-color: white;
-	color: #f00;
-}
-.search-container {
-	position: relative;
-	display: inline-block;
-  /* top: -5px; */
-  border-left: 1px solid #888888;
-	/* margin: 4px 2px; */
-  height: 58px;
-	width: 62px;
-	vertical-align: bottom;
-  margin-top: -5px;
-}
-
-.mglass {
-	display: inline-block;
-	pointer-events: none;
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-}
-
-.searchbutton {
-	position: absolute;
-  /* top: 5px; */
-	font-size: 30px;
-	width: 100%;
-  height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-.search:focus + .searchbutton {
-	transition-duration: 0.4s;
-	-moz-transition-duration: 0.4s;
-	-webkit-transition-duration: 0.4s;
-	-o-transition-duration: 0.4s;
-	background-color: white;
-	color: black;
-}
-
-.search {
-	position: absolute;
-	left: 49px; /* Button width-1px (Not 50px/100% because that will sometimes show a 1px line between the search box and button) */
-	background-color: white;
-	outline: none;
-	border: none;
-	padding: 0;
-	width: 0;
-	height: 100%;
-	z-index: 10;
-	transition-duration: 0.4s;
-	-moz-transition-duration: 0.4s;
-	-webkit-transition-duration: 0.4s;
-	-o-transition-duration: 0.4s;
-}
-
-.search:focus {
-  width: 363px; /* Bar width+1px */
-  padding: 0 16px 0 0;
-}
-
-.expandright {
-  left: auto;
-  right: 49px; /* Button width-1px */
-}
-
-.expandright:focus {
-  padding: 0 0 0 16px;
-}
 
 .container {
   float: left;
@@ -249,5 +160,17 @@ export default {
   float: left;
   width: 20%;
   border-right: 2px solid #dddddd;
+}
+#searchbar {
+  margin-right: 15px;
+}
+
+#searchbutton {
+  border-color: white;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 </style>
