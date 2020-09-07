@@ -8,6 +8,7 @@ import CreateUser from '@/components/CreateUser'
 import DeleteArticle from '@/components/DeleteArticle'
 import ArchivesList from '@/components/ArchivesList'
 import ComedyPage from '@/components/ComedyPage'
+import SearchList from '@/components/SearchList'
 
 Vue.use(Router)
 export default new Router({
@@ -16,6 +17,14 @@ export default new Router({
             path: '/',
             name: 'Home',
             component: Home
+        },
+        {
+            path: '/search',
+            name: 'Search',
+            component: SearchList,
+            meta: {
+                title: 'Search | Hare'
+            }
         },
         {
             path: '/category/:category',
