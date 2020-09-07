@@ -76,7 +76,6 @@ export default {
     methods: {
       isActiveHeader: function (categoryID) {
         if(this.$route.name !== 'Search' && ((this.$route.params.category && parseInt(this.$route.params.category) === categoryID) || (categoryID === 'archives' && this.$route.params.page))) {
-          console.log(this.$route);
           return {
             'text-decoration': 'underline',
           }
