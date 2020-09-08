@@ -19,6 +19,8 @@
     >
       next
   </router-link>
+  <br/>
+  Total number of articles: {{count}}
   </page-wrapper>
 </template>
 
@@ -36,6 +38,7 @@ export default {
     return {
       loaded: false,
       articles: [],
+      count: 0,
     };
   },
   methods: {
@@ -45,6 +48,9 @@ export default {
         const response = await this.$http.get(
           `/api/articles/?amount=20&offset=${offset}`
         );
+        const countResponse = await this.$http.get('/api/articles/count');
+        this.count = countResponse.data.data.count;
+        console.log(this.count);
         this.articles = response.data.data.articles;
         this.loaded = true;
       } catch (ex) {

@@ -18,6 +18,29 @@ const getTags = async (id) => {
     return tags;
 };
 
+router.get('/count', async (req, res) => {
+
+    const query = {
+        text: `
+            SELECT count(*)
+            FROM articles a
+            LEFT JOIN authors au
+                ON a.author = au.id
+            LEFT JOIN categories c
+                ON a.category = c.id
+            WHERE CURRENT_TIMESTAMP >= a.date_visible 
+        `
+    };
+
+    const result = await db.query(query);
+
+    const out = {
+      count: result.rows[0].count,
+    }
+
+    res.send(db.wrap(out));
+});
+
 router.get('/search', async (req, res) => {
     const searchTerm = req.query.searchTerm.toLowerCase();
     const offset = req.query.offset;
