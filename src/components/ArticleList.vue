@@ -57,9 +57,8 @@ export default {
 
 <style scoped>
 #feature-article {
-  min-width: 100%;
+  height: 0px;
   --width: calc(var(min-width));
-  height: calc(var(--width)*9/16);
 }
 #feature-title {
   text-align: left;
