@@ -42,7 +42,7 @@
                             <just-in-list/>
 
                         </div>
-                        <div class="col-8">
+                        <div class="col-9">
                             <slot></slot>
                         </div>
                     </div>
