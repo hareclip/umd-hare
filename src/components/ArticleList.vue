@@ -13,8 +13,7 @@
       <b-container>
 
         <b-row v-for="n in 3">
-          <b-col v-for="m in 2">
-
+          <b-col v-for="m in 2" id="smaller-article">
             <hr v-if="n > 1" />
             <div class="article-image">
               <arl :article="articles[((2*(n-1))+(m-1))+1]">
@@ -23,7 +22,6 @@
             </div>
             <div class="mb-2"><arl :article="articles[((2*(n-1))+(m-1))+1]" class="title-link-small">{{articles[((2*(n-1))+(m-1))+1].title}}</arl></div>
             <preview-text :article="articles[((2*(n-1))+(m-1))+1]" :chars="200" class="text"/>
-
           </b-col>
         </b-row>
 
@@ -56,6 +54,9 @@ export default {
 </script>
 
 <style scoped>
+#smaller-article {
+  text-align: left;
+}
 #feature-article {
   height: 0px;
   --width: calc(var(min-width));
@@ -73,26 +74,11 @@ export default {
   /* line-height: 15%; */
   /* color: white; */
 }
-.title-link {
-  font-weight: bold;
-  line-height: 1.1;
-  font-size: 60px;
-
-  text-align: left;
-  /* position: relative;
-  bottom: 50px; */
-  z-index: 10;
-  background-color: rgba(b,b,b,0.5);
-  width: 100%;
-  height: 100%;
-  color: white;
-}
 .article-image {
   width: 100%;
   height: auto;
 }
 .title-link {
-
   font-weight: bold;
   line-height: 1.1;
   font-size: 4.0em;
