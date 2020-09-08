@@ -38,11 +38,11 @@
             <loader :loaded="loaded">
                 <div class="container-float">
                     <div class="row">
-                        <div class="col-2 just-in">
+                        <div class="col-3 just-in">
                             <just-in-list/>
 
                         </div>
-                        <div class="col-9">
+                        <div class="col-8">
                             <slot></slot>
                         </div>
                     </div>
@@ -157,7 +157,6 @@ export default {
 }
 .just-in {
   float: left;
-  width: 20%;
   border-right: 2px solid #dddddd;
 }
 #searchbar {
