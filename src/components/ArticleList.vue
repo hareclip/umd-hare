@@ -65,13 +65,13 @@ export default {
   text-align: left;
   font-size: 2.5em;
   position: relative;
-  bottom: 100px;
+  bottom: 180px;
   padding-left: 10px;
   padding-top: 10px;
   z-index: 9;
   background-color: rgba(9,9,9,0.5);
   width: 100%;
-  height: 83px;
+  height: 166px;
   /* line-height: 15%; */
   /* color: white; */
 }
@@ -80,7 +80,7 @@ export default {
   font-weight: bold;
   line-height: 1.1;
   font-size: 4.0em;
-  font-size: 26px;
+  font-size: 60px;
 
   text-align: left;
   /* position: relative;

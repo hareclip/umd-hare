@@ -36,13 +36,13 @@
         <hr class="mx-2 mt-2 d-none d-md-block"/>
         <div class="pad">
             <loader :loaded="loaded">
-                <div class="container">
+                <div class="container-float">
                     <div class="row">
-                        <div class="col just-in">
+                        <div class="col-2 just-in">
                             <just-in-list/>
 
                         </div>
-                        <div class="col-9">
+                        <div class="col-8">
                             <slot></slot>
                         </div>
                     </div>
