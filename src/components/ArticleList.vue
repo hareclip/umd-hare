@@ -68,7 +68,7 @@ export default {
   text-align: left;
 }
 #feature-article {
-  /*min-width: 100%;*/
+  width: 100%;
   /*--width: calc(var(min-width));*/
   height: 28rem;
 }
