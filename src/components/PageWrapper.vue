@@ -170,13 +170,6 @@ export default {
   padding: 0; */
 }
 
-.container {
-  float: left;
-  width: 120%;
-  .row {
-    width: 120%;
-  }
-}
 .just-in {
   float: left;
   border-right: 2px solid #dddddd;

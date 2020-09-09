@@ -13,24 +13,21 @@
       <hr />
     </div>
     <b-container>
-      <b-row v-for="n in 3">
-        <b-col v-for="m in 2" id="smaller-article">
+      <b-row v-for="n in 3" :key="n">
+        <b-col v-for="m in 2" :key="getArticle(n,m).id" id="smaller-article">
           <hr v-if="n > 1" />
           <div class="article-image">
-            <arl :article="articles[((2*(n-1))+(m-1))+1]">
+            <arl :article="getArticle(n,m)">
               <preview-image
-                :article="articles[((2*(n-1))+(m-1))+1]"
+                :article="getArticle(n,m)"
                 class="mb-2 border-top border-danger shadow-sm"
               />
             </arl>
           </div>
           <div class="mb-2">
-            <arl
-              :article="articles[((2*(n-1))+(m-1))+1]"
-              class="title-link-small"
-            >{{articles[((2*(n-1))+(m-1))+1].title}}</arl>
+            <arl :article="getArticle(n,m)" class="title-link-small">{{getArticle(n,m).title}}</arl>
           </div>
-          <preview-text :article="articles[((2*(n-1))+(m-1))+1]" :chars="200" class="text" />
+          <preview-text :article="getArticle(n,m)" :chars="200" class="text" />
         </b-col>
       </b-row>
     </b-container>
@@ -57,6 +54,11 @@ export default {
   props: ["articles"],
   data() {
     return {};
+  },
+  methods: {
+    getArticle: function (row, col) {
+      return this.articles[2 * (row - 1) + (col - 1) + 1];
+    },
   },
 };
 </script>
