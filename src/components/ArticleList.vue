@@ -58,8 +58,9 @@ export default {
   text-align: left;
 }
 #feature-article {
-  height: 0px;
+  min-width: 100%;
   --width: calc(var(min-width));
+  height: 550px;
 }
 #feature-title {
   text-align: left;
@@ -76,7 +77,6 @@ export default {
 }
 .article-image {
   width: 100%;
-  height: auto;
 }
 .title-link {
   font-weight: bold;
