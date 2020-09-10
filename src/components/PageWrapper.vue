@@ -37,7 +37,7 @@
         href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7KG7N8HC9ZPW&source=url"
         class="px-1"
       >Donate</b-nav-item>
-      <b-nav-item href="#/comedy" class="px-1">Comedy on Campus</b-nav-item>
+      <b-nav-item href="https://calendar.google.com/calendar/u/5?cid=NTExdWZoYzVnZ2VycjFiN3ExOGxhcjBobzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" class="px-1">Comedy on Campus</b-nav-item>
       <b-nav-item
         href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRv-wpY_P3w5tB7LnTGdcrMptOkd-AOoxzGYpYn39tv96DJEAugZQJPJj81AONui2wdf9qQGjXp8cBd/pubhtml"
         class="px-1"
