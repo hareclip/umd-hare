@@ -10,16 +10,16 @@
       <b-nav-item href="#/archives/0" class="px-1" :style="isActiveHeader('archives')">Archives</b-nav-item>
       <!-- right side of navbar -->
       <b-nav class="orient-right">
-        <b-nav-item href="https://twitter.com/theumdhare">
-          <icon :icon="['fab', 'twitter']" class="mr-1" />
+        <b-nav-item href="https://twitter.com/theumdhare" v-if="showIcons">
+          <icon :icon="['fab', 'twitter']" class="mr-1" id="icon"/>
         </b-nav-item>
-        <b-nav-item href="https://www.instagram.com/theumdhare/">
-          <icon :icon="['fab', 'instagram']" class="mr-1" />
+        <b-nav-item href="https://www.instagram.com/theumdhare/" v-if="showIcons">
+          <icon :icon="['fab', 'instagram']" class="mr-1" id="icon"/>
         </b-nav-item>
-        <b-nav-item href="https://www.facebook.com/TheUMDHare/">
-          <icon :icon="['fab', 'facebook']" class="mr-2" />
+        <b-nav-item href="https://www.facebook.com/TheUMDHare/" v-if="showIcons">
+          <icon :icon="['fab', 'facebook']" class="mr-2" id="icon" :style="handleNavbarResize('icon')"/>
         </b-nav-item>
-        <form class="form-inline my-2 my-lg-0" id="searchbar" @submit.prevent="submitForm">
+        <form class="form-inline my-2 my-lg-0" id="searchbar" @submit.prevent="submitForm" v-if="showSearch">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" v-model="search" />
           <button class="btn btn-secondary my-2 my-sm-0" id="searchbutton" type="submit">Search</button>
         </form>
@@ -55,7 +55,7 @@
     <div class="pad">
       <loader :loaded="loaded">
         <div class="container-float">
-          <div class="row">
+          <div class="row" style="margin-top: 30px">
             <div class="col-3 just-in">
               <just-in-list />
             </div>
@@ -88,6 +88,8 @@ export default {
   data() {
     return {
       search: "",
+      showSearch: true,
+      showIcons: true,
     };
   },
   methods: {
@@ -108,7 +110,25 @@ export default {
         this.$router.push("/search/0?searchTerm=" + this.search);
       }
     },
+    handleNavbarResize: function() {
+      if(window.innerWidth < 1270) {
+        this.showIcons = false;
+      } else {
+        this.showIcons = true;
+      }
+      if(window.innerWidth < 1120) {
+        this.showSearch = false;
+      } else {
+        this.showSearch = true;
+      }
+    }
   },
+  created() {
+    window.addEventListener("resize", this.handleNavbarResize);
+  },
+  destroyed() {
+    window.removeEventListener("resizee", this.handleNavbarResize);
+  }
 };
 </script>
 
@@ -138,7 +158,9 @@ export default {
   position: fixed;
   top: 50px;
   z-index: 10;
-  height: 30px;
+  min-height: 30px;
+  display: flex !important;
+  flex-wrap: wrap;
 }
 .pad {
   padding: 5rem 5% 3rem 5%;
@@ -147,19 +169,23 @@ export default {
   font-family: Arial;
   font-size: 16px;
   font-weight: bold;
+  white-space: nowrap;
   color: white;
 }
+
 .secondary-nav .nav-link {
   font-family: "Verdana";
   font-size: 12px;
   font-weight: bold;
+  max-height: 34px;
+  white-space: nowrap;
   color: #888888;
 }
 .secondary-nav .navbar-text {
   font-family: "Verdana";
   color: black;
   font-size: 15px;
-  padding-left: 3rem;
+  padding-left: 1.3rem;
 }
 .orient-right {
   position: fixed;
