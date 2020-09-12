@@ -6,7 +6,7 @@
       <b-nav-item href="#/category/5" class="px-1" :style="isActiveHeader(5)">Sports</b-nav-item>
       <b-nav-item href="#/category/6" class="px-1" :style="isActiveHeader(6)">Entertainment</b-nav-item>
       <b-nav-item href="#/category/4" class="px-1" :style="isActiveHeader(4)">Rabbithole</b-nav-item>
-      <b-nav-item href="#/category/?" class="px-1">News in Images</b-nav-item>
+      <b-nav-item href="#/category/8" class="px-1">News in Images</b-nav-item>
       <b-nav-item href="#/archives/0" class="px-1" :style="isActiveHeader('archives')">Archives</b-nav-item>
       <!-- right side of navbar -->
       <b-nav class="orient-right">
