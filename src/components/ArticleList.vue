@@ -1,16 +1,30 @@
 <template>
   <div class="list">
-    <div id="feature-article" class="px-4 border-right">
+    <div id="feature-article" class="px-4 border-right" :style="handleMobileStyle('feature-article')">
       <div v-if="articles[0]">
         <arl :article="articles[0]">
           <preview-image :article="articles[0]" class="mb-3 border-top border-danger shadow-sm" />
         </arl>
-        <div class="mb-3" id="feature-title">
+        <div class="mb-3" id="feature-title" :style="handleMobileStyle('feature-title')">
           <arl :article="articles[0]" class="title-link">{{articles[0].title}}</arl>
         </div>
         <!-- <preview-text :article="featuredArticleA" class="text"/> -->
       </div>
       <hr />
+    </div>
+    <div id="mobile-smaller-article" :style="handleMobileStyle('smaller-article')">
+      <div class="article-image">
+        <arl :article="articles[0]">
+          <preview-image
+            :article="articles[0]"
+            class="mb-2 border-top border-danger shadow-sm"
+          />
+        </arl>
+      </div>
+      <div class="mb-2">
+        <arl :article="articles[0]" class="title-link-small">{{articles[0].title}}</arl>
+      </div>
+      <preview-text :article="articles[0]" :chars="200" class="text" />
     </div>
     <b-container>
       <b-row v-for="n in 3" :key="n">
@@ -59,6 +73,22 @@ export default {
     getArticle: function (row, col) {
       return this.articles[2 * (row - 1) + (col - 1) + 1];
     },
+    handleMobileStyle: function(element) {
+      let style = {};
+      this.$ifOnMobile(
+          () => {
+            if(element === 'feature-article'){
+              style = {"display": "none !important"}
+            }
+          },
+          () => {
+            if(element === 'smaller-article') {
+              style = {"display": "none"}
+            }
+          }
+      );
+      return style
+    }
   },
 };
 </script>

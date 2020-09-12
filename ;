@@ -26,8 +26,7 @@
       </b-nav>
     </b-navbar>
 
-    <router-link to="/"><img src="/static/banner_square.png" alt="square banner" width="50%" height="50%" :style="handleMobileStyle('logo')"/></router-link>
-    <b-navbar class="secondary-nav d-none d-md-flex" align="left" :style="handleMobileStyle('secondary-nav')">
+    <b-navbar class="secondary-nav d-none d-md-flex" align="left">
       <b-nav-text id="more">More:</b-nav-text>
       <b-nav-item
         href="https://drive.google.com/file/d/1ouubjkUdwNUXw2EuJrQNblxd0C19TNLu/view?usp=sharing"
@@ -56,9 +55,9 @@
     <div class="pad">
       <loader :loaded="loaded">
         <div class="container-float">
-          <div class="row" style="margin-top: 30px" :style="handleMobileStyle('row-main-content')">
-            <div class="col-3 just-in" :style="handleMobileStyle('just-in')">
-              <just-in-list/>
+          <div class="row" style="margin-top: 30px">
+            <div class="col-3 just-in">
+              <just-in-list :style="handleMobileStyle()"/>
             </div>
             <div class="col-8">
               <slot></slot>
@@ -123,28 +122,14 @@ export default {
         this.showSearch = true;
       }
     },
-    handleMobileStyle: function(element) {
-      let style = {};
+    handleMobileStyle: function() {
+      const style = {};
       this.$ifOnMobile(
           () => {
-            if(element === 'just-in' || element === 'secondary-nav'){
-              style = {"display": "none !important"}
-              } else if(element === 'logo') {
-                style = {"margin-top": "5px"}
-              } else if(element == 'row-main-content') {
-                style = {
-                  "display": "flex",
-                  "justify-content": "center"  
-                }
-              }
-          },
-          () => {
-            if(element === 'logo') {
               style = {"display": "none"}
-            }
-          }
+          },
+          () => {}
       );
-      return style
     }
   },
   created() {
