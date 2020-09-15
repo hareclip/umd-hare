@@ -1,11 +1,11 @@
 <template>
   <page-wrapper :loaded="loaded">
     <div>
-        <hr class="mx-5 d-none d-md-block"/>
-        <!-- <article-list :articles="articles" class="d-md-none mx-2 mb-4"/> -->
-        <loader :loaded="loaded">
-          <article-list :articles="this.articles" class="list mx-5 mb-4"/>
-          <!-- <div id="feature-article" class="px-4 border-right">
+      <hr class="mx-5 d-none d-md-block" />
+      <!-- <article-list :articles="articles" class="d-md-none mx-2 mb-4"/> -->
+      <loader :loaded="loaded">
+        <article-list :articles="this.articles" class="list mb-4" />
+        <!-- <div id="feature-article" class="px-4 border-right">
                 <div v-if="featuredArticleA">
                     <arl :article="featuredArticleA">
                         <preview-image :article="featuredArticleA" class="mb-3 border-top border-danger shadow-sm"/>
@@ -34,72 +34,71 @@
                 </b-row>
 
               </b-container>
-            </div> -->
-        </loader>
+        </div>-->
+      </loader>
     </div>
-
-    </page-wrapper>
+  </page-wrapper>
 </template>
 
 <script>
-import Loader from '@/components/Loader'
-import PageWrapper from '@/components/PageWrapper'
-import ArticleList from '@/components/ArticleList'
+import Loader from "@/components/Loader";
+import PageWrapper from "@/components/PageWrapper";
+import ArticleList from "@/components/ArticleList";
 // import ArticleImage from '@/components/ArticleImage'
 // import ArticlePreviewText from '@/components/ArticlePreviewText'
 // import ArticleLink from '@/components/ArticleLink'
 // import { BContainer } from 'bootstrap-vue'
 
 export default {
-    name: 'Home',
-    components: {
-        Loader,
-        ArticleList,
-        PageWrapper
-        // 'preview-image': ArticleImage,
-        // 'preview-text': ArticlePreviewText,
-        // 'arl': ArticleLink,
-        // BContainer,
-    },
-    data () {
-        return {
-            loaded: false,
-            articles: [],
-            // featuredArticleA: {},
-            // all_articles: [],
-        }
-    },
-    methods: {
-        async load () {
-            try {
-                const response = await this.$http.get('/api/articles/home')
-                this.articles = response.data.data.articles
-                // this.featuredArticleA = this.articles[0]
-                // this.all_articles = this.articles.slice(1,7)
+  name: "Home",
+  components: {
+    Loader,
+    ArticleList,
+    PageWrapper,
+    // 'preview-image': ArticleImage,
+    // 'preview-text': ArticlePreviewText,
+    // 'arl': ArticleLink,
+    // BContainer,
+  },
+  data() {
+    return {
+      loaded: false,
+      articles: [],
+      // featuredArticleA: {},
+      // all_articles: [],
+    };
+  },
+  methods: {
+    async load() {
+      try {
+        const response = await this.$http.get("/api/articles/home");
+        this.articles = response.data.data.articles;
+        // this.featuredArticleA = this.articles[0]
+        // this.all_articles = this.articles.slice(1,7)
 
-                this.loaded = true
-            } catch (ex) {
-                console.log(ex);
-            }
-        }
+        this.loaded = true;
+      } catch (ex) {
+        console.log(ex);
+      }
     },
-    mounted () {
-        this.load()
-    }
-}
+  },
+  mounted() {
+    this.load();
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .clear-link {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 .nav-link {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 #home-articles {
-    text-align: left;
+  text-align: left;
 }
 /* #feature-article {
   min-width: 100%;
@@ -150,5 +149,4 @@ export default {
   width: 100%;
   height: auto;
 } */
-
 </style>

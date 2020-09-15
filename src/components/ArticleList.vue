@@ -1,6 +1,10 @@
 <template>
   <div class="list">
-    <div id="feature-article" class="px-4 border-right" :style="handleMobileStyle('feature-article')">
+    <div
+      id="feature-article"
+      class="px-4 border-right"
+      :style="handleMobileStyle('feature-article')"
+    >
       <div v-if="articles[0]">
         <arl :article="articles[0]">
           <preview-image :article="articles[0]" class="mb-3 border-top border-danger shadow-sm" />
@@ -15,10 +19,7 @@
     <div id="mobile-smaller-article" :style="handleMobileStyle('smaller-article')">
       <div class="article-image">
         <arl :article="articles[0]">
-          <preview-image
-            :article="articles[0]"
-            class="mb-2 border-top border-danger shadow-sm"
-          />
+          <preview-image :article="articles[0]" class="mb-2 border-top border-danger shadow-sm" />
         </arl>
       </div>
       <div class="mb-2">
@@ -73,28 +74,29 @@ export default {
     getArticle: function (row, col) {
       return this.articles[2 * (row - 1) + (col - 1) + 1];
     },
-    handleMobileStyle: function(element) {
+    handleMobileStyle: function (element) {
       let style = {};
       this.$ifOnMobile(
-          () => {
-            if(element === 'feature-article'){
-              style = {"display": "none !important"}
-            }
-          },
-          () => {
-            if(element === 'smaller-article') {
-              style = {"display": "none"}
-            }
+        () => {
+          if (element === "feature-article") {
+            style = { display: "none !important" };
           }
+        },
+        () => {
+          if (element === "smaller-article") {
+            style = { display: "none" };
+          }
+        }
       );
-      return style
-    }
+      return style;
+    },
   },
 };
 </script>
 
 <style scoped>
 #smaller-article {
+  width: 100%;
   text-align: left;
 }
 #feature-article {
@@ -147,6 +149,12 @@ export default {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
+}
+@media not screen and (max-width: 768px) {
+  .list {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 }
 .article {
   width: 50%;

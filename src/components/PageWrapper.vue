@@ -2,7 +2,7 @@
   <div class="outer-wrapper">
     <b-navbar class="hello-nav d-none d-md-flex" align="left">
       <b-nav-item href="#/category/1" class="px-1" :style="isActiveHeader(1)">News</b-nav-item>
-      <b-nav-item href="#/category/2" class="px-1" :style="isActiveHeader(2)">Opinion</b-nav-item>
+      <b-nav-item href="#/category/2" class="px-1" :style="isActiveHeader(2)">Features</b-nav-item>
       <b-nav-item href="#/category/5" class="px-1" :style="isActiveHeader(5)">Sports</b-nav-item>
       <b-nav-item href="#/category/6" class="px-1" :style="isActiveHeader(6)">Entertainment</b-nav-item>
       <b-nav-item href="#/category/4" class="px-1" :style="isActiveHeader(4)">Rabbithole</b-nav-item>
@@ -11,23 +11,45 @@
       <!-- right side of navbar -->
       <b-nav class="orient-right">
         <b-nav-item href="https://twitter.com/theumdhare" v-if="showIcons">
-          <icon :icon="['fab', 'twitter']" class="mr-1" id="icon"/>
+          <icon :icon="['fab', 'twitter']" class="mr-1" id="icon" />
         </b-nav-item>
         <b-nav-item href="https://www.instagram.com/theumdhare/" v-if="showIcons">
-          <icon :icon="['fab', 'instagram']" class="mr-1" id="icon"/>
+          <icon :icon="['fab', 'instagram']" class="mr-1" id="icon" />
         </b-nav-item>
         <b-nav-item href="https://www.facebook.com/TheUMDHare/" v-if="showIcons">
-          <icon :icon="['fab', 'facebook']" class="mr-2" id="icon" :style="handleNavbarResize('icon')"/>
+          <icon
+            :icon="['fab', 'facebook']"
+            class="mr-2"
+            id="icon"
+            :style="handleNavbarResize('icon')"
+          />
         </b-nav-item>
-        <form class="form-inline my-2 my-lg-0" id="searchbar" @submit.prevent="submitForm" v-if="showSearch">
+        <form
+          class="form-inline my-2 my-lg-0"
+          id="searchbar"
+          @submit.prevent="submitForm"
+          v-if="showSearch"
+        >
           <input class="form-control mr-sm-2" type="text" placeholder="Search" v-model="search" />
           <button class="btn btn-secondary my-2 my-sm-0" id="searchbutton" type="submit">Search</button>
         </form>
       </b-nav>
     </b-navbar>
 
-    <router-link to="/"><img src="/static/banner_square.png" alt="square banner" width="50%" height="50%" :style="handleMobileStyle('logo')"/></router-link>
-    <b-navbar class="secondary-nav d-none d-md-flex" align="left" :style="handleMobileStyle('secondary-nav')">
+    <router-link to="/">
+      <img
+        src="/static/banner_square.png"
+        alt="square banner"
+        width="50%"
+        height="50%"
+        :style="handleMobileStyle('logo')"
+      />
+    </router-link>
+    <b-navbar
+      class="secondary-nav d-none d-md-flex"
+      align="left"
+      :style="handleMobileStyle('secondary-nav')"
+    >
       <b-nav-text id="more">More:</b-nav-text>
       <b-nav-item
         href="https://drive.google.com/file/d/1ouubjkUdwNUXw2EuJrQNblxd0C19TNLu/view?usp=sharing"
@@ -38,7 +60,10 @@
         href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7KG7N8HC9ZPW&source=url"
         class="px-1"
       >Donate</b-nav-item>
-      <b-nav-item href="https://calendar.google.com/calendar/u/5?cid=NTExdWZoYzVnZ2VycjFiN3ExOGxhcjBobzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" class="px-1">Comedy on Campus</b-nav-item>
+      <b-nav-item
+        href="https://calendar.google.com/calendar/u/5?cid=NTExdWZoYzVnZ2VycjFiN3ExOGxhcjBobzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+        class="px-1"
+      >Comedy on Campus</b-nav-item>
       <b-nav-item
         href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRv-wpY_P3w5tB7LnTGdcrMptOkd-AOoxzGYpYn39tv96DJEAugZQJPJj81AONui2wdf9qQGjXp8cBd/pubhtml"
         class="px-1"
@@ -58,9 +83,9 @@
         <div class="container-float">
           <div class="row" style="margin-top: 30px" :style="handleMobileStyle('row-main-content')">
             <div class="col-3 just-in" :style="handleMobileStyle('just-in')">
-              <just-in-list/>
+              <just-in-list />
             </div>
-            <div class="col-8">
+            <div class="slot-wrapper">
               <slot></slot>
             </div>
           </div>
@@ -111,48 +136,48 @@ export default {
         this.$router.push("/search/0?searchTerm=" + this.search);
       }
     },
-    handleNavbarResize: function() {
-      if(window.innerWidth < 1270) {
+    handleNavbarResize: function () {
+      if (window.innerWidth < 1270) {
         this.showIcons = false;
       } else {
         this.showIcons = true;
       }
-      if(window.innerWidth < 1120) {
+      if (window.innerWidth < 1120) {
         this.showSearch = false;
       } else {
         this.showSearch = true;
       }
     },
-    handleMobileStyle: function(element) {
+    handleMobileStyle: function (element) {
       let style = {};
       this.$ifOnMobile(
-          () => {
-            if(element === 'just-in' || element === 'secondary-nav'){
-              style = {"display": "none !important"}
-              } else if(element === 'logo') {
-                style = {"margin-top": "5px"}
-              } else if(element == 'row-main-content') {
-                style = {
-                  "display": "flex",
-                  "justify-content": "center"  
-                }
-              }
-          },
-          () => {
-            if(element === 'logo') {
-              style = {"display": "none"}
-            }
+        () => {
+          if (element === "just-in" || element === "secondary-nav") {
+            style = { display: "none !important" };
+          } else if (element === "logo") {
+            style = { "margin-top": "2.5rem" };
+          } else if (element == "row-main-content") {
+            style = {
+              display: "flex",
+              "justify-content": "center",
+            };
           }
+        },
+        () => {
+          if (element === "logo") {
+            style = { display: "none" };
+          }
+        }
       );
-      return style
-    }
+      return style;
+    },
   },
   created() {
     window.addEventListener("resize", this.handleNavbarResize);
   },
   destroyed() {
     window.removeEventListener("resizee", this.handleNavbarResize);
-  }
+  },
 };
 </script>
 
@@ -186,8 +211,10 @@ export default {
   display: flex !important;
   flex-wrap: wrap;
 }
-.pad {
-  padding: 5rem 5% 3rem 5%;
+@media not screen and (max-width: 768px) {
+  .pad {
+    padding: 5rem 5% 3rem 5%;
+  }
 }
 .nav-link {
   font-family: Arial;
@@ -195,6 +222,23 @@ export default {
   font-weight: bold;
   white-space: nowrap;
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .slot-wrapper {
+    width: 100%;
+    max-width: 90%;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+@media not screen and (max-width: 768px) {
+  .slot-wrapper {
+    width: 100%;
+    max-width: 66.666667%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 
 .secondary-nav .nav-link {
