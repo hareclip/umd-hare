@@ -1,6 +1,6 @@
 <template>
     <page-wrapper>
-        <auth-form v-model="auth" url="/api/admin/auth" v-if="!auth.accepted"></auth-form>
+        <auth-form v-model="auth" url="admin/auth" v-if="!auth.accepted"></auth-form>
         <div v-if="auth.accepted">
             <h1>Create Staff User</h1>
             <hr/>
@@ -45,7 +45,7 @@ export default {
             }
 
             try {
-                await this.$http.post('/api/admin/create-user', {
+                await this.$http.post('admin/create-user', {
                     username: this.auth.username,
                     password: this.auth.password,
                     newUsername: this.newUser,

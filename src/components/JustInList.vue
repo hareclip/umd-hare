@@ -23,7 +23,7 @@ export default {
     methods: {
       async load() {
         try {
-            const response = await this.$http.get(`/api/articles/?amount=6`)
+            const response = await this.$http.get(`articles/?amount=6`)
             this.articles = response.data.data.articles
         } catch (ex) {
             console.log(ex);

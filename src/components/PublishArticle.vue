@@ -1,6 +1,6 @@
 <template>
   <page-wrapper :loaded="loaded">
-    <auth-form v-model="auth" url="/api/staff/auth" v-if="!auth.accepted"></auth-form>
+    <auth-form v-model="auth" url="staff/auth" v-if="!auth.accepted"></auth-form>
     <div v-if="auth.accepted">
       <h1>Publish Article</h1>
       <hr />
@@ -93,7 +93,7 @@ export default {
       try {
         await this.loadAuthors();
 
-        const categoriesRes = await this.$http.get(`/api/categories`);
+        const categoriesRes = await this.$http.get(`categories`);
         this.categories = categoriesRes.data.data.categories.map(c => ({
           value: c.id,
           text: `[${c.id}] ${c.label}`
@@ -106,7 +106,7 @@ export default {
     },
 
     async loadAuthors() {
-      const authorsRes = await this.$http.get(`/api/authors`);
+      const authorsRes = await this.$http.get(`authors`);
       this.authors = authorsRes.data.data.authors.map(a => ({
         value: a.id,
         text: `[${a.id}] ${a.fullName}`,
@@ -129,7 +129,7 @@ export default {
       }
 
       try {
-        this.$http.post("/api/staff/create-author", {
+        this.$http.post("staff/create-author", {
           username: this.auth.username,
           password: this.auth.password,
           fullName: this.newAuthor
@@ -183,7 +183,7 @@ export default {
 
       try {
         const res = await this.$http.post(
-          "/api/staff/publish-article",
+          "staff/publish-article",
           formData,
           {
             headers: {

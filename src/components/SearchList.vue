@@ -44,7 +44,7 @@ export default {
         const searchTerm = this.$route.query.searchTerm;
         const offset = parseInt(this.$route.params.page) * 20;
         const response = await this.$http.get(
-          `/api/articles/search?searchTerm=${searchTerm}&offset=${offset}`
+          `articles/search?searchTerm=${searchTerm}&offset=${offset}`
         );
         this.articles = response.data.data.articles;
         this.loaded = true;

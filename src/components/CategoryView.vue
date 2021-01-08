@@ -34,8 +34,8 @@ export default {
     methods: {
         async load () {
             try {
-                const labelRes = await this.$http.get(`/api/categories/${this.$route.params.category}`)
-                const response = await this.$http.get(`/api/articles/category/${this.$route.params.category}?amount=10`)
+                const labelRes = await this.$http.get(`categories/${this.$route.params.category}`)
+                const response = await this.$http.get(`articles/category/${this.$route.params.category}?amount=10`)
                 this.articles = response.data.data.articles
                 this.label = labelRes.data.data.label
                 document.title = this.label + ' | The Hare'

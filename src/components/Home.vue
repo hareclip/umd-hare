@@ -71,7 +71,7 @@ export default {
   methods: {
     async load() {
       try {
-        const response = await this.$http.get("/api/articles/home");
+        const response = await this.$http.get("articles/home");
         this.articles = response.data.data.articles;
         // this.featuredArticleA = this.articles[0]
         // this.all_articles = this.articles.slice(1,7)

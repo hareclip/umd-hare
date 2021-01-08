@@ -1,6 +1,6 @@
 <template>
   <page-wrapper>
-    <auth-form v-model="auth" url="/api/admin/auth" v-if="!auth.accepted"></auth-form>
+    <auth-form v-model="auth" url="admin/auth" v-if="!auth.accepted"></auth-form>
     <div v-if="auth.accepted">
       <h1>Delete Article</h1>
       <hr />
@@ -38,7 +38,7 @@ export default {
     async loadArticles() {
       this.selectedArticle = 0;
       try {
-        const articlesRes = await this.$http.get(`/api/articles?amount=30`);
+        const articlesRes = await this.$http.get(`articles?amount=30`);
         this.articles = articlesRes.data.data.articles.map(a => ({
           value: a.id,
           text: `[${a.id}] ${a.title}`
@@ -54,7 +54,7 @@ export default {
       }
 
       try {
-        await this.$http.post("/api/admin/delete-article", {
+        await this.$http.post("admin/delete-article", {
           username: this.auth.username,
           password: this.auth.password,
           id: this.selectedArticle

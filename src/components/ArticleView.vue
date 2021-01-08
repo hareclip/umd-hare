@@ -54,7 +54,7 @@ export default {
 
       try {
         const response = await this.$http.get(
-          `/api/articles/${this.$route.params.id}`
+          `articles/${this.$route.params.id}`
         );
         this.article = response.data.data;
 

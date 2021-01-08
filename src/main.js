@@ -16,9 +16,12 @@ import VueGtag from "vue-gtag"
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import icons from './icons'
 
-Vue.prototype.$http = axios
+Vue.prototype.$http = axios.create({
+    baseURL: process.env.VUE_APP_API_URL,
+    timeout: 1000,
+});
 
-Vue.prototype.$bucketName = 'newspaperumd2019'
+Vue.prototype.$bucketName = process.env.VUE_APP_BUCKET_NAME
 Vue.prototype.$bucketUrl = `https://${Vue.prototype.$bucketName}.s3.amazonaws.com/res/`
 Vue.prototype.$getFromBucket = async (fileName) => {
     try {

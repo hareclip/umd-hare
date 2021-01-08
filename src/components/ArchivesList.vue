@@ -46,9 +46,9 @@ export default {
       try {
         const offset = this.$route.params.page * 20;
         const response = await this.$http.get(
-          `/api/articles/?amount=20&offset=${offset}`
+          `articles/?amount=20&offset=${offset}`
         );
-        const countResponse = await this.$http.get('/api/articles/count');
+        const countResponse = await this.$http.get('articles/count');
         this.count = countResponse.data.data.count;
         console.log(this.count);
         this.articles = response.data.data.articles;
